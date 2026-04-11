@@ -272,10 +272,6 @@
       transition: background 0.2s;
     }
     .newsletter-form button:hover { background: var(--green-mid); }
-    .newsletter-imgs {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 48px;
-    }
-    .newsletter-imgs img { border-radius: 6px; width: 100%; height: 160px; object-fit: cover; }
 
     /* ── MANDATE ────────────────────────────────────────────────────── */
     .mandate-section { background: var(--white); }
@@ -317,9 +313,9 @@
     .pillar-band-card {
       padding: 48px 40px; position: relative; overflow: hidden;
     }
-    .pillar-band-card:nth-child(1) { background: var(--green-dark); }
-    .pillar-band-card:nth-child(2) { background: var(--green); }
-    .pillar-band-card:nth-child(3) { background: var(--coal-mid); }
+    .pillar-band-card:nth-child(1) { background: linear-gradient(rgba(15,40,8,0.78),rgba(15,40,8,0.88)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80') center/cover; }
+    .pillar-band-card:nth-child(2) { background: linear-gradient(rgba(30,60,15,0.8),rgba(30,60,15,0.9)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80') center/cover; }
+    .pillar-band-card:nth-child(3) { background: linear-gradient(rgba(10,10,10,0.8),rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&q=80') center/cover; }
     .pillar-band-card h3 { font-size: 22px; color: var(--white); margin-bottom: 14px; }
     .pillar-band-card p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
 
@@ -665,13 +661,13 @@
     </div>
   </div>
   <div class="hero-bottom">
-    <div class="hero-card">
+    <div class="hero-card" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.72)),url(\'https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png\') center/cover no-repeat;">
       <span class="label">Annual Event</span>
       <h2>Mining Integration Summit 2026</h2>
       <p>Sustainable Harmony and Accountability for Inclusive Growth Across Africa.</p>
-      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-green">Register Now</a>
+      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-orange">Register Now</a>
     </div>
-    <div class="hero-card">
+    <div class="hero-card" style="background:linear-gradient(rgba(10,40,10,0.82),rgba(10,40,10,0.92)),url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/7.png') center/cover no-repeat;">
       <span class="label">Framework</span>
       <h2>Environmental, Social &amp; Entrepreneur's Hub</h2>
       <p>Our Pillars: Integration, Impact, Transformation and Sustainability.</p>
@@ -722,7 +718,7 @@
   <div class="container">
     <div class="news-grid">
       <div class="news-card">
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Feature" loading="lazy" />
+        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/5.png" alt="Feature" loading="lazy" />
         <div class="news-card-body">
           <span class="label">Feature</span>
           <h3>Conversations with Vuyolwethu Zungula — Member of Parliament</h3>
@@ -730,7 +726,7 @@
         </div>
       </div>
       <div class="news-card">
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Interview" loading="lazy" />
+        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/6.png" alt="Conversations with Lucy P Ngwabeni" loading="lazy" />
         <div class="news-card-body">
           <span class="label">Interview</span>
           <h3>Conversations with Lucy P Ngwabeni</h3>
@@ -780,12 +776,7 @@
         <span class="label">Stay Informed</span>
         <h2>Subscribe to our Newsletter</h2>
         <p>Where Mining Investment and Opportunity Meet.</p>
-        <div class="newsletter-imgs">
-          <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&q=80" alt="South African mining operations" loading="lazy" />
-          <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Mining summit conference" loading="lazy" />
-          <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" alt="Industry partnership" loading="lazy" />
-          <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&q=80" alt="Executive summit event" loading="lazy" />
-        </div>
+        
       </div>
       <div>
         <form class="newsletter-form" id="newsletterForm">
@@ -1253,7 +1244,7 @@
         <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-green">Become a Sponsor</a>
       </div>
       <div>
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1564182842519-8a3b2af3e228?w=800&q=80" alt="Mining industry partnership" loading="lazy" style="border-radius:8px;" />
+        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Mining industry partnership" loading="lazy" style="border-radius:8px;" />
       </div>
     </div>
 
@@ -1391,15 +1382,13 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
 
   // ── Mobile menu toggle ──
   var toggle = document.getElementById('navToggle');
   var menu   = document.getElementById('mobileMenu');
-  toggle.addEventListener('click', function() {
-    menu.classList.toggle('open');
-  });
+  toggle.addEventListener('click', function() { menu.classList.toggle('open'); });
   menu.querySelectorAll('a').forEach(function(a) {
     a.addEventListener('click', function() { menu.classList.remove('open'); });
   });
@@ -1408,9 +1397,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 100;
-    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) {
-      a.style.color = '#444';
-    });
+    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) { a.style.color = '#444'; });
     sections.forEach(function(sec) {
       if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
         var active = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
@@ -1424,7 +1411,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var btn   = form.querySelector('button[type="submit"]');
+      var btn = form.querySelector('button[type="submit"]');
       var email = form.querySelector('input[name="email"]').value.trim();
       if (!email) { alert('Please enter your email address.'); return; }
       btn.disabled = true;
