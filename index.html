@@ -46,27 +46,28 @@
     /* ── NAVBAR ─────────────────────────────────────────────────────── */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(17,17,16,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-dark);
+      background: #ffffff;
+      backdrop-filter: none;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
       padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
       height: 76px;
     }
     .nav-logo img {
-      height: 56px; width: auto; object-fit: contain;
+      height: 68px; width: auto; object-fit: contain;
     }
     .nav-links {
       display: flex; align-items: center; gap: 6px;
     }
     .nav-links a {
       font-size: 13px; font-weight: 500;
-      color: rgba(255,255,255,0.75);
+      color: #333;
       padding: 7px 12px; border-radius: 4px;
       transition: color 0.2s, background 0.2s;
       white-space: nowrap;
     }
-    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-links a:hover { color: var(--green-mid); background: rgba(45,90,27,0.06); }
     .nav-links .nav-cta {
       background: var(--green-mid); color: var(--white);
       padding: 8px 18px; border-radius: 4px; font-weight: 600;
@@ -75,7 +76,7 @@
     .nav-links .nav-cta:hover { background: var(--green-bright); }
 
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .nav-toggle span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: #333; margin: 5px 0; transition: 0.3s; }
 
     .mobile-menu {
       display: none; position: fixed; top: 76px; left: 0; right: 0;
@@ -720,7 +721,7 @@
   <div class="container">
     <div class="news-grid">
       <div class="news-card">
-        <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/5.png" alt="Feature" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Feature" loading="lazy" />
         <div class="news-card-body">
           <span class="label">Feature</span>
           <h3>Conversations with Vuyolwethu Zungula — Member of Parliament</h3>
@@ -779,10 +780,10 @@
         <h2>Subscribe to our Newsletter</h2>
         <p>Where Mining Investment and Opportunity Meet.</p>
         <div class="newsletter-imgs">
-          <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png" alt="" loading="lazy" />
-          <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/2.png" alt="" loading="lazy" />
-          <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" alt="" loading="lazy" />
-          <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png" alt="" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="South African mining operations" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Mining industry professionals" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&q=80" alt="Community and mining partnership" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c2fd44?w=400&q=80" alt="Mining summit conference" loading="lazy" />
         </div>
       </div>
       <div>
@@ -1406,34 +1407,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ── Navbar: turn white on scroll, dark when at top ──
-  var navbar = document.getElementById('navbar');
-  var navLogo = document.querySelector('.nav-logo img');
-  var navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-  function updateNav() {
-    var scrolled = window.scrollY > 60;
-    navbar.style.background = scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(17,17,16,0.96)';
-    navbar.style.borderBottomColor = scrolled ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
-    navbar.style.boxShadow = scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
-    navAnchors.forEach(function(a) {
-      a.style.color = scrolled ? '#333' : 'rgba(255,255,255,0.75)';
-    });
-    var cta = document.querySelector('.nav-links .nav-cta');
-    if (cta) { cta.style.color = 'white'; }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
   // ── Active nav highlight on scroll ──
-  var sections = document.querySelectorAll('section[id], div[id]');
-  var navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  var sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 100;
-    var scrolled = window.scrollY > 60;
+    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) {
+      a.style.color = '#333';
+    });
     sections.forEach(function(sec) {
       if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
         var active = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
-        if (active) active.style.color = scrolled ? 'var(--green-mid)' : '#e09b35';
+        if (active) active.style.color = 'var(--green-mid)';
       }
     });
   }, { passive: true });
