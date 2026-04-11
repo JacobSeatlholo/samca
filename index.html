@@ -51,10 +51,10 @@
       border-bottom: 1px solid var(--border-dark);
       padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
+      height: 76px;
     }
     .nav-logo img {
-      height: 44px; width: auto; object-fit: contain;
+      height: 56px; width: auto; object-fit: contain;
     }
     .nav-links {
       display: flex; align-items: center; gap: 6px;
@@ -78,7 +78,7 @@
     .nav-toggle span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
 
     .mobile-menu {
-      display: none; position: fixed; top: 68px; left: 0; right: 0;
+      display: none; position: fixed; top: 76px; left: 0; right: 0;
       background: var(--coal-mid); padding: 20px;
       border-bottom: 1px solid var(--border-dark); z-index: 99;
     }
@@ -137,7 +137,7 @@
       width: 100%; text-align: center; margin-bottom: 6px;
     }
     .partners-strip img {
-      height: 52px; width: auto; object-fit: contain;
+      height: 64px; width: auto; object-fit: contain;
       opacity: 0.85; transition: opacity 0.2s, transform 0.2s;
       filter: grayscale(0.1);
     }
@@ -149,7 +149,7 @@
       background: linear-gradient(135deg, var(--coal) 0%, var(--green-dark) 60%, var(--coal) 100%);
       display: flex; flex-direction: column;
       position: relative; overflow: hidden;
-      padding-top: 68px;
+      padding-top: 76px;
     }
     .hero-bg-img {
       position: absolute; inset: 0;
@@ -1048,7 +1048,7 @@
       <p>Dedicated to strengthening the relationship between mining houses, host communities, investors, and government. Across Africa, mining remains one of the most powerful drivers of economic growth.</p>
       <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-orange">Register Now</a>
     </div>
-    <img class="event-hero-img" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/2.png" alt="Mining Summit 2026" loading="lazy" />
+    <img class="event-hero-img" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png" alt="Mining Summit 2026" loading="lazy" />
   </div>
 
   <div class="container" style="padding:80px 32px;">
@@ -1223,7 +1223,7 @@
 
     <div class="reg-note">
       All registrations are subject to SAMCA membership verification. Corporate packages require a signed ESG Accord commitment.<br/>
-      Contact <a href="mailto:registrations@samca.co.za" style="color:var(--green-mid);font-weight:600;">registrations@samca.co.za</a> for group bookings and BBBEE verification letters.
+      Contact <a href="/cdn-cgi/l/email-protection#9ae8fffdf3e9eee8fbeef3f5f4e9dae9fbf7f9fbb4f9f5b4e0fb" style="color:var(--green-mid);font-weight:600;"><span class="__cf_email__" data-cfemail="d7a5b2b0bea4a3a5b6a3beb8b9a497a4b6bab4b6f9b4b8f9adb6">[email&#160;protected]</span></a> for group bookings and BBBEE verification letters.
     </div>
   </div>
 </section>
@@ -1354,9 +1354,8 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Official-SAMCA-logo.png" alt="SAMCA" loading="lazy" />
         <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa's mining and resource sectors.</p>
-        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
+        <a href="/cdn-cgi/l/email-protection#9afbfef7f3f4dae9fbf7f9fbb4f9f5b4e0fb" class="email-link"><span class="__cf_email__" data-cfemail="80e1e4ede9eec0f3e1ede3e1aee3efaefae1">[email&#160;protected]</span></a>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -1373,8 +1372,8 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
-          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#91f0f5fcf8ffd1e2f0fcf2f0bff2febfebf0"><span class="__cf_email__" data-cfemail="3a5b5e5753547a495b57595b14595514405b">[email&#160;protected]</span></a></li>
+          <li><a href="/cdn-cgi/l/email-protection#41332426283235332035282e2f320132202c22206f222e6f3b20"><span class="__cf_email__" data-cfemail="0a786f6d63797e786b7e636564794a796b67696b24696524706b">[email&#160;protected]</span></a></li>
         </ul>
         <h4 style="margin-top:24px;">Addresses</h4>
         <ul>
@@ -1390,7 +1389,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
 
   // ── Mobile menu toggle ──
@@ -1407,16 +1406,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // ── Navbar: turn white on scroll, dark when at top ──
+  var navbar = document.getElementById('navbar');
+  var navLogo = document.querySelector('.nav-logo img');
+  var navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  function updateNav() {
+    var scrolled = window.scrollY > 60;
+    navbar.style.background = scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(17,17,16,0.96)';
+    navbar.style.borderBottomColor = scrolled ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
+    navbar.style.boxShadow = scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+    navAnchors.forEach(function(a) {
+      a.style.color = scrolled ? '#333' : 'rgba(255,255,255,0.75)';
+    });
+    var cta = document.querySelector('.nav-links .nav-cta');
+    if (cta) { cta.style.color = 'white'; }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
   // ── Active nav highlight on scroll ──
   var sections = document.querySelectorAll('section[id], div[id]');
   var navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 100;
+    var scrolled = window.scrollY > 60;
     sections.forEach(function(sec) {
       if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
-        navAs.forEach(function(a) { a.style.color = 'rgba(255,255,255,0.75)'; });
         var active = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
-        if (active) active.style.color = '#e09b35';
+        if (active) active.style.color = scrolled ? 'var(--green-mid)' : '#e09b35';
       }
     });
   }, { passive: true });
@@ -1438,19 +1455,3 @@ document.addEventListener('DOMContentLoaded', function() {
         body: JSON.stringify({
           type: 'newsletter',
           email: email,
-          name:     (form.querySelector('input[name="name"]')    || {}).value || '',
-          phone:    (form.querySelector('input[name="phone"]')   || {}).value || '',
-          location: (form.querySelector('input[name="location"]')|| {}).value || '',
-          company:  (form.querySelector('input[name="company"]') || {}).value || '',
-          notes:    (form.querySelector('textarea[name="notes"]')|| {}).value || ''
-        })
-      }).finally(function() {
-        form.innerHTML = '<p style="color:var(--green-mid);font-size:16px;font-weight:600;padding:24px 0;">✓ You\'re subscribed! Thank you.</p>';
-      });
-    });
-  }
-
-});
-</script>
-</body>
-</html>
