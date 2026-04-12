@@ -76,25 +76,14 @@
     }
     .nav-links .nav-cta:hover { background: var(--green-bright); }
 
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .nav-toggle span { display: block; width: 22px; height: 2px; background: #333; margin: 5px 0; transition: 0.3s; }
+    
+    
 
-    .mobile-menu {
-      display: none; position: fixed; top: 76px; left: 0; right: 0;
-      background: var(--coal-mid); padding: 20px;
-      border-bottom: 1px solid var(--border-dark); z-index: 99;
-    }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a {
-      display: block; color: rgba(255,255,255,0.8); padding: 12px 0;
-      border-bottom: 1px solid var(--border-dark); font-size: 15px;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu .nav-cta {
-      display: block; text-align: center; margin-top: 16px;
-      background: var(--green-mid); color: white;
-      padding: 14px; border-radius: 6px; font-weight: 600;
-    }
+    
+    
+    
+    
+    
 
     /* ── SHARED UTILITIES ───────────────────────────────────────────── */
     .section { padding: 80px 0; }
@@ -559,7 +548,110 @@
     .footer-bottom a:hover { color: var(--white); }
 
     /* ── RESPONSIVE ─────────────────────────────────────────────────── */
-    @media (max-width: 1024px) {
+    
+    /* ── NAV TOGGLE ── */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px; height: 44px;
+      background: none; border: none;
+      cursor: pointer; padding: 8px;
+      border-radius: 6px;
+      transition: background 0.2s;
+      z-index: 200;
+    }
+    .nav-toggle:hover { background: rgba(0,0,0,0.05); }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #333;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-toggle span:nth-child(2) { margin: 5px 0; }
+
+    /* Hamburger → X animation */
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE MENU — full overlay slide down ── */
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: 76px; left: 0; right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      z-index: 99;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+      pointer-events: none;
+    }
+    .mobile-menu.open {
+      max-height: 90vh;
+      overflow-y: auto;
+      pointer-events: all;
+    }
+    .mobile-menu-inner {
+      padding: 8px 0 24px;
+    }
+    .mobile-menu a {
+      display: flex; align-items: center;
+      color: #333; padding: 14px 24px;
+      font-size: 16px; font-weight: 500;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+    .mobile-menu a:last-of-type { border-bottom: none; }
+    .mobile-menu a:hover { background: rgba(45,90,27,0.06); color: var(--green-mid); }
+    .mobile-menu a::before {
+      content: '';
+      display: inline-block;
+      width: 3px; height: 16px;
+      background: var(--green-mid);
+      border-radius: 2px;
+      margin-right: 14px;
+      opacity: 0;
+      transform: scaleY(0);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .mobile-menu a:hover::before { opacity: 1; transform: scaleY(1); }
+    .mobile-menu-cta {
+      margin: 16px 24px 0;
+    }
+    .mobile-menu-cta a {
+      display: block !important;
+      text-align: center;
+      background: var(--green-mid) !important;
+      color: white !important;
+      padding: 15px 24px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+      font-size: 15px !important;
+      border-bottom: none !important;
+      transition: background 0.2s !important;
+    }
+    .mobile-menu-cta a:hover { background: var(--green-bright) !important; }
+    .mobile-menu-cta a::before { display: none !important; }
+
+    /* Overlay backdrop */
+    .menu-backdrop {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 98;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .menu-backdrop.open { display: block; opacity: 1; }
+
+@media (max-width: 1024px) {
       .pillars-cards { grid-template-columns: 1fr 1fr; }
       .pillar-card:nth-child(3n) { border-right: 1px solid var(--border); }
       .pillar-card:nth-child(2n) { border-right: none; }
@@ -573,7 +665,7 @@
     @media (max-width: 820px) {
       .nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .nav-toggle { display: block; }
+      
       .hero-bottom { grid-template-columns: 1fr; }
       .hero-card { border-right: none; border-bottom: 1px solid var(--border-dark); }
       .video-grid { grid-template-columns: 1fr; }
@@ -603,6 +695,13 @@
       .event-hero-img { display: none; }
       .event-hero-text { padding: 60px 32px; }
       .container { padding: 0 20px; }
+      .partner-opps > div:last-child { display: none; }
+      div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .sponsor-video-wrap a { padding-bottom: 56.25%; }
+      .tier-grid { border-radius: 0; }
+      .pillar-card { padding: 28px 20px; }
+      .hero-text h1 { font-size: 32px; }
+      .hero-text p { font-size: 15px; }
     }
 
     @media (max-width: 480px) {
@@ -629,21 +728,28 @@
     <a href="#exhibit">Exhibit/Sponsor</a>
     <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="nav-cta">Register Now</a>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 </nav>
 
 <!-- Mobile Menu -->
+<div class="menu-backdrop" id="menuBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a>
-  <a href="#who-we-are">Who We Are</a>
-  <a href="#pillars">MIS Pillars</a>
-  <a href="#event-details">Event Details</a>
-  <a href="#registration">MIS Registration</a>
-  <a href="#sponsorship">MIS Sponsorship</a>
-  <a href="#exhibit">Exhibit/Sponsor</a>
-  <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="nav-cta">Register Now →</a>
+  <div class="mobile-menu-inner">
+    <a href="#home">Home</a>
+    <a href="#who-we-are">Who We Are</a>
+    <a href="#pillars">MIS Pillars</a>
+    <a href="#event-details">Event Details</a>
+    <a href="#registration">MIS Registration</a>
+    <a href="#sponsorship">MIS Sponsorship</a>
+    <a href="#exhibit">Exhibit / Sponsor</a>
+    <div class="mobile-menu-cta">
+      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener noreferrer">Register Now →</a>
+    </div>
+  </div>
 </div>
 
 <!-- ── HERO ───────────────────────────────────────────────────────────────── -->
@@ -1216,7 +1322,7 @@
 
     <div class="reg-note">
       All registrations are subject to SAMCA membership verification. Corporate packages require a signed ESG Accord commitment.<br/>
-      Contact <a href="mailto:admin@samca.co.za">admin@samca.co.za</a> for group bookings and BBBEE verification letters.
+      Contact <a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="1f7e7b7276715f6c7e727c7e317c7031657e">[email&#160;protected]</span></a> for group bookings and BBBEE verification letters.
     </div>
   </div>
 </section>
@@ -1348,7 +1454,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa's mining and resource sectors.</p>
-        <a href="mailto:admin@samca.co.za">admin@samca.co.za</a>
+        <a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="ff9e9b929691bf8c9e929c9ed19c90d1859e">[email&#160;protected]</span></a>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -1365,8 +1471,8 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
-          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+          <li><a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="2f4e4b4246416f5c4e424c4e014c4001554e">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:registrations@samca.co.za"><span class="__cf_email__" data-cfemail="cbb9aeaca2b8bfb9aabfa2a4a5b88bb8aaa6a8aae5a8a4e5b1aa">[email&#160;protected]</span></a></li>
         </ul>
         <h4 style="margin-top:24px;">Addresses</h4>
         <ul>
@@ -1382,22 +1488,61 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ── Mobile menu toggle ──
-  var toggle = document.getElementById('navToggle');
-  var menu   = document.getElementById('mobileMenu');
-  toggle.addEventListener('click', function() { menu.classList.toggle('open'); });
-  menu.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  // ── Mobile menu toggle ──────────────────────────────────────────────────
+  var toggle   = document.getElementById('navToggle');
+  var menu     = document.getElementById('mobileMenu');
+  var backdrop = document.getElementById('menuBackdrop');
+
+  function openMenu() {
+    menu.classList.add('open');
+    backdrop.classList.add('open');
+    toggle.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    backdrop.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function() {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // ── Active nav highlight on scroll ──
+  // Close on backdrop click
+  backdrop.addEventListener('click', closeMenu);
+
+  // Close on nav link click and smooth scroll
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Close if window resizes past 820px
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 820) closeMenu();
+  });
+
+  // ── Active nav highlight on scroll ──────────────────────────────────────
   var sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 100;
-    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) { a.style.color = '#444'; });
+    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) {
+      a.style.color = '#444';
+    });
     sections.forEach(function(sec) {
       if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
         var active = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
@@ -1406,12 +1551,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { passive: true });
 
-  // ── Newsletter form ──
+  // ── Newsletter form ──────────────────────────────────────────────────────
   var form = document.getElementById('newsletterForm');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
+      var btn   = form.querySelector('button[type="submit"]');
       var email = form.querySelector('input[name="email"]').value.trim();
       if (!email) { alert('Please enter your email address.'); return; }
       btn.disabled = true;
