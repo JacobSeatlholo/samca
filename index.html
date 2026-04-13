@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 :root {
   --coal: #111110;
@@ -466,6 +466,29 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
   .hero-card { padding: 28px 20px; }
 }
 
+
+    /* ── PAGE-BASED NAVIGATION ── */
+    .page-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      min-height: calc(100vh - 76px);
+    }
+    .page-section.active {
+      display: block;
+      opacity: 1;
+    }
+    .page-section.fade-in {
+      animation: fadeSection 0.35s ease forwards;
+    }
+    @keyframes fadeSection {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Active nav link */
+    .nav-links a.nav-active { color: var(--green-mid) !important; font-weight: 600; }
+    .mobile-menu-inner a.nav-active { color: var(--green-mid) !important; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -510,7 +533,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </div>
 
 <!-- ── HERO ───────────────────────────────────────────────────────────────── -->
-<section id="home">
+<section id="home" class="page-section">
   <div class="hero-bg-img"></div>
   <div class="hero-content">
     <div class="hero-text">
@@ -540,7 +563,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </section>
 
 <!-- ── VIDEO FEATURES ─────────────────────────────────────────────────────── -->
-<section id="who-we-are" class="section" style="background:var(--coal-mid);">
+<section id="who-we-are" class="page-section section" style="background:var(--coal-mid);" >
   <div class="container">
     <span class="label label-light">Latest</span>
     <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
@@ -763,7 +786,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </div>
 
 <!-- ── SUMMIT PILLARS ─────────────────────────────────────────────────────── -->
-<section id="pillars">
+<section id="pillars" class="page-section">
   <div class="pillars-intro">
     <div class="container">
       <span class="label label-light">Framework</span>
@@ -896,7 +919,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </section>
 
 <!-- ── EVENT DETAILS ──────────────────────────────────────────────────────── -->
-<section id="event-details">
+<section id="event-details" class="page-section">
   <div class="event-hero">
     <div class="event-hero-text">
       <span class="label label-light">2026 Annual Event</span>
@@ -981,7 +1004,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </section>
 
 <!-- ── REGISTRATION ───────────────────────────────────────────────────────── -->
-<section id="registration" class="section">
+<section id="registration" class="page-section section" >
   <div class="container">
     <div class="reg-header">
       <span class="label">Register</span>
@@ -1085,7 +1108,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </section>
 
 <!-- ── SPONSORSHIP ────────────────────────────────────────────────────────── -->
-<section id="sponsorship" class="section" style="background:var(--white);">
+<section id="sponsorship" class="page-section section" style="background:var(--white);" >
   <div class="container">
     <span class="label">MIS Sponsorship</span>
     <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:8px;">See the Summit in Action</h2>
@@ -1167,7 +1190,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 </div>
 
 <!-- ── EXHIBIT / SPONSOR ──────────────────────────────────────────────────── -->
-<section id="exhibit" class="section">
+<section id="exhibit" class="page-section section" >
   <div class="container">
     <span class="label label-light">Get Involved</span>
     <h2 style="font-size:clamp(28px,4vw,48px);color:var(--white);margin-bottom:8px;">Breaking Ground Together</h2>
@@ -1245,11 +1268,79 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+(function() {
 
-document.addEventListener('DOMContentLoaded', function() {
+  var SECTIONS = ['home','who-we-are','pillars','event-details','registration','sponsorship','exhibit'];
+  var current  = null;
 
+  // ── Show a section by ID ──────────────────────────────────────────────────
+  function showSection(id) {
+    if (!SECTIONS.includes(id)) id = 'home';
+    if (id === current) return;
+    current = id;
+
+    // Hide all, show target
+    SECTIONS.forEach(function(sid) {
+      var el = document.getElementById(sid);
+      if (!el) return;
+      el.classList.remove('active', 'fade-in');
+      el.style.display = 'none';
+    });
+
+    var target = document.getElementById(id);
+    if (!target) return;
+    target.style.display = 'block';
+    // Force reflow then animate
+    target.offsetHeight; // eslint-disable-line
+    target.classList.add('active', 'fade-in');
+
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+
+    // Update URL hash without triggering scroll
+    history.replaceState(null, '', '#' + id);
+
+    // Update active nav links
+    updateActiveNav(id);
+
+    // Update page title
+    var titles = {
+      'home':         'SAMCA | Mining Integration Summit 2026',
+      'who-we-are':   'Who We Are | SAMCA',
+      'pillars':      'MIS Pillars | SAMCA',
+      'event-details':'Event Details | SAMCA',
+      'registration': 'Registration | SAMCA',
+      'sponsorship':  'Sponsorship | SAMCA',
+      'exhibit':      'Exhibit & Sponsor | SAMCA'
+    };
+    document.title = titles[id] || 'SAMCA';
+  }
+
+  // ── Update active nav state ───────────────────────────────────────────────
+  function updateActiveNav(id) {
+    document.querySelectorAll('.nav-links a, .mobile-menu-inner a').forEach(function(a) {
+      a.classList.remove('nav-active');
+      var href = (a.getAttribute('href') || '').replace('#', '');
+      if (href === id) a.classList.add('nav-active');
+    });
+  }
+
+  // ── Intercept all internal anchor clicks ─────────────────────────────────
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (!href.startsWith('#')) return;
+    var id = href.replace('#', '');
+    if (!SECTIONS.includes(id)) return;
+    e.preventDefault();
+    showSection(id);
+    closeMenu();
+  });
+
+  // ── Mobile menu ───────────────────────────────────────────────────────────
   var toggle   = document.getElementById('navToggle');
   var menu     = document.getElementById('mobileMenu');
   var backdrop = document.getElementById('menuBackdrop');
@@ -1276,56 +1367,42 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
   window.addEventListener('resize', function() { if (window.innerWidth > 820) closeMenu(); });
 
-  menu.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { closeMenu(); });
+  // ── Newsletter form ───────────────────────────────────────────────────────
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (form.id !== 'newsletterForm') return;
+    e.preventDefault();
+    var btn   = form.querySelector('button[type="submit"]');
+    var email = (form.querySelector('input[name="email"]') || {}).value || '';
+    email = email.trim();
+    if (!email) { alert('Please enter your email address.'); return; }
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+    fetch('https://script.google.com/macros/s/AKfycbzGvP51xCkknJHw_EkSWfj_zN4-FBHJzMBM0rU1OfTBkf_iKQHy_A1rTkJWJLgbJA/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify({
+        type:     'newsletter',
+        email:    email,
+        name:     (form.querySelector('input[name="name"]')     || {}).value || '',
+        phone:    (form.querySelector('input[name="phone"]')    || {}).value || '',
+        location: (form.querySelector('input[name="location"]') || {}).value || '',
+        company:  (form.querySelector('input[name="company"]')  || {}).value || '',
+        notes:    (form.querySelector('textarea[name="notes"]') || {}).value || ''
+      })
+    }).finally(function() {
+      form.innerHTML = '<p style="color:var(--green-mid);font-size:16px;font-weight:600;padding:24px 0;">✓ Subscribed! Thank you.</p>';
+    });
   });
 
-  // Active nav highlight on scroll
-  var sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY + 100;
-    document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a) {
-      a.style.color = '#444';
-    });
-    sections.forEach(function(sec) {
-      if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
-        var active = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
-        if (active) active.style.color = 'var(--green-mid)';
-      }
-    });
-  }, { passive: true });
+  // ── Init on DOMContentLoaded ──────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', function() {
+    var hash = (window.location.hash || '#home').replace('#', '');
+    showSection(SECTIONS.includes(hash) ? hash : 'home');
+  });
 
-  // Newsletter form
-  var form = document.getElementById('newsletterForm');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn   = form.querySelector('button[type="submit"]');
-      var email = form.querySelector('input[name="email"]').value.trim();
-      if (!email) { alert('Please enter your email address.'); return; }
-      btn.disabled = true;
-      btn.textContent = 'Subscribing…';
-      fetch('https://script.google.com/macros/s/AKfycbzGvP51xCkknJHw_EkSWfj_zN4-FBHJzMBM0rU1OfTBkf_iKQHy_A1rTkJWJLgbJA/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
-        body: JSON.stringify({
-          type:     'newsletter',
-          email:    email,
-          name:     (form.querySelector('input[name="name"]')     || {}).value || '',
-          phone:    (form.querySelector('input[name="phone"]')    || {}).value || '',
-          location: (form.querySelector('input[name="location"]') || {}).value || '',
-          company:  (form.querySelector('input[name="company"]')  || {}).value || '',
-          notes:    (form.querySelector('textarea[name="notes"]') || {}).value || ''
-        })
-      }).finally(function() {
-        form.innerHTML = '<p style="color:var(--green-mid);font-size:16px;font-weight:600;padding:24px 0;">✓ Subscribed! Thank you.</p>';
-      });
-    });
-  }
-
-});
-
+})();
 </script>
 </body>
 </html>
