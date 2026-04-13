@@ -4,14 +4,14 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SAMCA | Mining Integration Summit 2026</title>
-<meta name="description" content="SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa's mining and resource sectors."/>
+<meta name="description" content="SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa’s mining and resource sectors."/>
 <link rel="icon" href="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Official-SAMCA-logo.png" type="image/png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: auto; }
+html { scroll-behavior: smooth; }
 
 :root {
   --coal: #111110;
@@ -467,28 +467,62 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 }
 
 
-    /* ── PAGE-BASED NAVIGATION ── */
-    .page-section {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      min-height: calc(100vh - 76px);
-    }
-    .page-section.active {
-      display: block;
-      opacity: 1;
-    }
-    .page-section.fade-in {
-      animation: fadeSection 0.35s ease forwards;
-    }
-    @keyframes fadeSection {
-      from { opacity: 0; transform: translateY(8px); }
+    /* ── PAGE ROUTER ── */
+    .page-section { display: none; }
+    .page-section.active { display: block; animation: fadeUp 0.32s ease forwards; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    .nav-active { color: var(--green-mid) !important; font-weight: 600 !important; }
 
-    /* Active nav link */
-    .nav-links a.nav-active { color: var(--green-mid) !important; font-weight: 600; }
-    .mobile-menu-inner a.nav-active { color: var(--green-mid) !important; font-weight: 600; }
+    /* ── PARTNER STRIP (logos +30% = 83px) ── */
+    .partners-inner {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 36px; padding: 8px 0;
+    }
+    .partners-inner .label { width: 100%; text-align: center; margin-bottom: 4px; }
+    .partners-strip { background: #f8f5ef; padding: 32px 0; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .partners-strip img { height: 83px; width: auto; object-fit: contain; opacity: 0.88; transition: opacity 0.2s, transform 0.2s; }
+    .partners-strip img:hover { opacity: 1; transform: scale(1.05); }
+
+    /* ── STRATEGIC PARTNERS GRID ── */
+    .partner-logos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px 60px; align-items: center; justify-items: center;
+      padding: 48px; background: #fff; border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .partner-logos-grid img { height: 90px; width: auto; object-fit: contain; opacity: 0.85; transition: all 0.2s; }
+    .partner-logos-grid img:hover { opacity: 1; transform: scale(1.06); }
+
+    /* ── SITE FOOTER ── */
+    .site-footer { background: #111110; padding: 64px 0 28px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: auto; }
+    .site-footer .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .site-footer .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 300px; margin-top: 8px; }
+    .site-footer .email-link { display: inline-block; margin-top: 14px; color: #c8882a; font-size: 14px; }
+    .site-footer .email-link:hover { text-decoration: underline; }
+    .site-footer .footer-col h4 { font-family: "DM Sans", sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .site-footer .footer-col ul { display: grid; gap: 9px; }
+    .site-footer .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .site-footer .footer-col ul li a:hover { color: #fff; }
+    .site-footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; font-size: 12px; color: rgba(255,255,255,0.3); }
+    .site-footer .footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .site-footer .footer-bottom a:hover { color: #fff; }
+
+    /* ── RESPONSIVE overrides ── */
+    @media (max-width: 820px) {
+      .site-footer .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .site-footer .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .partner-logos-grid { grid-template-columns: repeat(2, 1fr); padding: 28px; gap: 28px; }
+      .partner-logos-grid img { height: 64px; }
+      .partners-strip img { height: 56px; }
+    }
+    @media (max-width: 480px) {
+      .partner-logos-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; }
+      .partners-strip img { height: 44px; }
+    }
+
 </style>
 </head>
 <body>
@@ -504,6 +538,7 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
     <a href="#registration">MIS Registration</a>
     <a href="#sponsorship">MIS Sponsorship</a>
     <a href="#exhibit">Exhibit/Sponsor</a>
+    <a href="#partners">Partners</a>
     <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="nav-cta">Register Now</a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -524,17 +559,14 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
     <a href="#registration">MIS Registration</a>
     <a href="#sponsorship">MIS Sponsorship</a>
     <a href="#exhibit">Exhibit / Sponsor</a>
+    <a href="#partners">Strategic Partners</a>
     <div class="mobile-menu-cta">
-      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener noreferrer">Register Now →</a>
+      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener noreferrer">Register Now &rarr;</a>
     </div>
   </div>
 </div>
-  </div>
-</div>
-
-<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
 <section id="home" class="page-section">
-  <div class="hero-bg-img"></div>
+<div class="hero-bg-img"></div>
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow">SAMCA · South Africa</p>
@@ -560,11 +592,49 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       <a href="#pillars" class="btn btn-outline">Learn More</a>
     </div>
   </div>
-</section>
 
-<!-- ── VIDEO FEATURES ─────────────────────────────────────────────────────── -->
-<section id="who-we-are" class="page-section section" style="background:var(--coal-mid);" >
+<footer class="site-footer">
   <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
+  </div>
+</footer>
+</section>
+<section id="who-we-are" class="page-section">
+<div class="container">
     <span class="label label-light">Latest</span>
     <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
       <h2 style="font-size:clamp(28px,4vw,42px);color:var(--white);max-width:480px;">News Updates</h2>
@@ -597,197 +667,62 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── NEWS CARDS ─────────────────────────────────────────────────────────── -->
-<section class="section" style="background:var(--white);">
-  <div class="container">
-    <div class="news-grid">
-      <div class="news-card">
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/5.png" alt="Feature" loading="lazy" />
-        <div class="news-card-body">
-          <span class="label">Feature</span>
-          <h3>Conversations with Vuyolwethu Zungula — Member of Parliament</h3>
-          <p>An exclusive dialogue shaping the future of mining policy and community integration in South Africa.</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/6.png" alt="Conversations with Lucy P Ngwabeni" loading="lazy" />
-        <div class="news-card-body">
-          <span class="label">Interview</span>
-          <h3>Conversations with Lucy P Ngwabeni</h3>
-          <p>A high-level dialogue shaping the future of mining in South Africa — an exclusive interview.</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/7.png" alt="Summit" loading="lazy" />
-        <div class="news-card-body">
-          <span class="label">Summit</span>
-          <h3>Registration Now Open — Limited Seats Available</h3>
-          <p>Delegate numbers are limited to preserve quality of engagement. Early commitment is strongly advised.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PARTNER STRIP 1 ────────────────────────────────────────────────────── -->
 <div class="partners-strip">
   <div class="container">
-    <div class="inner">
-      <span class="label-row"><span class="label" style="color:var(--muted);">In Partnership With</span></span>
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy" />
+    <div class="partners-inner">
+      <span class="label" style="color:var(--muted);text-align:center;width:100%;">In Partnership With</span>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy"/>
     </div>
   </div>
 </div>
-
-<!-- ── CTA BAND ───────────────────────────────────────────────────────────── -->
-<div class="cta-band">
+<footer class="site-footer">
   <div class="container">
-    <h2>You are invited to an exclusive, high-level dialogue shaping the future of mining in South Africa.</h2>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-orange">Register Now</a>
-  </div>
-</div>
-
-<!-- ── NEWSLETTER ─────────────────────────────────────────────────────────── -->
-<section class="newsletter-section">
-  <div class="container">
-    <div class="newsletter-grid">
-      <div class="newsletter-left">
-        <span class="label">Stay Informed</span>
-        <h2>Subscribe to our Newsletter</h2>
-        <p>Where Mining Investment and Opportunity Meet.</p>
-        
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
       </div>
-      <div>
-        <form class="newsletter-form" id="newsletterForm">
-          <h3>SAMCA Newsletter</h3>
-          <input type="text" name="name" placeholder="Your name" />
-          <input type="email" name="email" placeholder="Email address" required />
-          <input type="tel" name="phone" placeholder="Phone number" />
-          <input type="text" name="location" placeholder="Country / City" />
-          <input type="text" name="company" placeholder="Company / Organisation" />
-          <textarea name="notes" placeholder="Notes" rows="3" style="padding:12px 16px;border:1.5px solid #ddd;border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;resize:vertical;" ></textarea>
-          <button type="submit">Subscribe</button>
-          <p style="font-size:11px;color:var(--muted);">Your information is kept private and used only for SAMCA communications.</p>
-        </form>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
+        </ul>
       </div>
     </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
   </div>
+</footer>
 </section>
-
-<!-- ── MANDATE ────────────────────────────────────────────────────────────── -->
-<section class="mandate-section section">
-  <div class="container">
-    <div class="mandate-grid">
-      <div class="mandate-left">
-        <span class="label">Our Mandate</span>
-        <h2>Reimagining mining as a force where measurable impact replaces symbolic commitment.</h2>
-        <p>SAMCA exists to solve one of the mining industry's most persistent challenges: the disconnect between mining operations and the communities that host them.</p>
-        <p>Progress is reflected in both economic performance and community wellbeing. We provide the frameworks, advisory services, and platforms that enable mining companies to secure their social license to operate, unlock long-term value, and attract global capital through evidence-based impact.</p>
-        <p>The Summit introduces a complementary and solution-focused platform that prioritises integration, inclusion, and shared economic value within mining communities.</p>
-      </div>
-      <div>
-        <span class="label">What We Provide</span>
-        <h2 style="font-size:28px;margin-bottom:32px;">Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h4>Strategic Advisory Services</h4>
-            <p>Expert guidance navigating ESG performance and community engagement frameworks.</p>
-          </div>
-          <div class="service-card">
-            <h4>Community Engagement Frameworks</h4>
-            <p>Structured development frameworks that prioritise community representation, trust, and partnership.</p>
-          </div>
-          <div class="service-card">
-            <h4>Investor-Aligned Sustainability Models</h4>
-            <p>Enabling long-term value through evidence-based impact strategies that attract global capital.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── WHERE INTEGRATION MEETS INFLUENCE ─────────────────────────────────── -->
-<section class="influence-section">
-  <div class="container">
-    <span class="label label-light">The Summit Serves As A Platform Where</span>
-    <h2>Where Integration Meets Influence</h2>
-    <div class="influence-list" style="max-width:640px;">
-      <ul>
-        <li>Mining houses identify operational needs and opportunities for collaboration</li>
-        <li>Communities articulate their development priorities</li>
-        <li>Women and youth access pathways into the mining economy</li>
-        <li>Strategic partnerships are formed to support long-term sector stability</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ── 3 PILLARS BAND ──────────────────────────────────────────────────────── -->
-<div class="pillars-band">
-  <div class="pillar-band-card">
-    <span class="label label-light">Pillar One</span>
-    <h3>Sustainable Harmony</h3>
-    <p>Building sustainable harmony through responsible mining, community partnership, environmental care, and economic growth that creates long-term value for people, industry, and future generations.</p>
-  </div>
-  <div class="pillar-band-card">
-    <span class="label label-light">Pillar Two</span>
-    <h3>Accountability for Transformation</h3>
-    <p>Driving accountable transformation by creating opportunities for underrepresented demographics through inclusion, skills development, leadership access, and meaningful economic participation.</p>
-  </div>
-  <div class="pillar-band-card">
-    <span class="label label-light">Pillar Three</span>
-    <h3>Mayoral Charity Golf Challenge</h3>
-    <p>The Mayoral Charity Golf Challenge brings leaders together for networking, partnership building, and giving back — combining sport, philanthropy, and meaningful connections beyond the boardroom.</p>
-  </div>
-</div>
-
-<!-- ── MISSION / VISION ───────────────────────────────────────────────────── -->
-<section class="mission-section section">
-  <div class="container">
-    <div class="mission-grid">
-      <div class="mission-card">
-        <span class="label">Our Mission</span>
-        <h2>Establishing a globally competitive, inclusive, and integrated mining economy.</h2>
-        <p>To establish a globally competitive, inclusive, and integrated mining economy that drives sustainable development and shared prosperity across the continent.</p>
-      </div>
-      <div class="mission-card">
-        <span class="label">Our Vision</span>
-        <h2>Convening strategic stakeholders to facilitate actionable partnerships.</h2>
-        <p>To convene strategic stakeholders and facilitate actionable partnerships that unblock value across the mining value chain — from extraction to beneficiation and beyond.</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px;">
-      <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-green">Become a Partner</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── PARTNER STRIP 2 ────────────────────────────────────────────────────── -->
-<div class="partners-strip">
-  <div class="container">
-    <div class="inner">
-      <span class="label-row"><span class="label" style="color:var(--muted);">In Partnership With</span></span>
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy" />
-    </div>
-  </div>
-</div>
-
-<!-- ── SUMMIT PILLARS ─────────────────────────────────────────────────────── -->
 <section id="pillars" class="page-section">
-  <div class="pillars-intro">
+<div class="pillars-intro">
     <div class="container">
       <span class="label label-light">Framework</span>
       <h1>Our Summit Pillars</h1>
@@ -866,61 +801,50 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── STATS ───────────────────────────────────────────────────────────────── -->
-<div class="stats-band">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="num">7–8%</div>
-        <div class="stat-label">of South Africa's GDP</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">450K+</div>
-        <div class="stat-label">Direct Jobs Supported</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">R1T+</div>
-        <div class="stat-label">Export Revenue Annually</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ── SCHOOL INNOVATION ──────────────────────────────────────────────────── -->
-<section class="school-section section">
+<footer class="site-footer">
   <div class="container">
-    <span class="label">Education Initiative</span>
-    <h2 style="font-size:clamp(24px,3vw,40px);margin-bottom:48px;">Mining Integration Summit School Innovation Program</h2>
-    <div class="school-grid">
-      <div>
-        <h3 style="font-size:22px;margin-bottom:16px;">About</h3>
-        <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:32px;">The programme invites schools to participate in a structured competition where learners will develop practical, innovative, and community-focused solutions that address social, environmental, economic or technological issues affecting mining communities.</p>
-        <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-green">Learn More</a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
       </div>
-      <div>
-        <h3 style="font-size:22px;margin-bottom:16px;">Themes for the Competition</h3>
-        <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Schools are invited to submit solutions addressing real challenges such as:</p>
-        <ul class="school-themes">
-          <li>Environmental rehabilitation in mining areas</li>
-          <li>Water and soil quality challenges</li>
-          <li>Youth unemployment and skills development</li>
-          <li>Digital solutions for rural communities</li>
-          <li>Community safety and infrastructure</li>
-          <li>Energy and sustainability</li>
-          <li>Small business and supplier development</li>
-          <li>Health and social challenges in mining towns</li>
-          <li>Technology in mining or environmental monitoring</li>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
         </ul>
       </div>
     </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
   </div>
+</footer>
 </section>
-
-<!-- ── EVENT DETAILS ──────────────────────────────────────────────────────── -->
 <section id="event-details" class="page-section">
-  <div class="event-hero">
+<div class="event-hero">
     <div class="event-hero-text">
       <span class="label label-light">2026 Annual Event</span>
       <h1>Mining Integration Summit 2026</h1>
@@ -971,41 +895,50 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── DEADLINE BAND ──────────────────────────────────────────────────────── -->
-<div class="deadline-band">
-  <h2>Registration is open until 30 June 2026</h2>
-  <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-orange">Register</a>
-</div>
 
-<!-- ── SCHOOL PROGRAM (Event Section repeat) ─────────────────────────────── -->
-<section style="background:var(--coal-mid);padding:80px 0;">
+<footer class="site-footer">
   <div class="container">
-    <span class="label label-light">Education Initiative</span>
-    <h2 style="font-size:clamp(22px,3vw,36px);color:var(--white);max-width:600px;margin-bottom:32px;">School Innovation Program</h2>
-    <div class="school-grid">
-      <div>
-        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:28px;">Schools participate in a structured competition developing practical, innovative, community-focused solutions addressing social, environmental, economic or technological issues affecting mining communities.</p>
-        <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="btn btn-orange">Learn More</a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
       </div>
-      <div>
-        <h3 style="font-size:18px;color:var(--white);margin-bottom:16px;">Competition Themes</h3>
-        <ul style="display:grid;gap:10px;">
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.6);padding:10px 16px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid var(--gold);">Environmental rehabilitation in mining areas</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.6);padding:10px 16px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid var(--gold);">Water and soil quality challenges</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.6);padding:10px 16px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid var(--gold);">Youth unemployment and skills development</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.6);padding:10px 16px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid var(--gold);">Digital solutions for rural communities</li>
-          <li style="font-size:13.5px;color:rgba(255,255,255,0.6);padding:10px 16px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid var(--gold);">Community safety and infrastructure</li>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
         </ul>
       </div>
     </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
   </div>
+</footer>
 </section>
-
-<!-- ── REGISTRATION ───────────────────────────────────────────────────────── -->
-<section id="registration" class="page-section section" >
-  <div class="container">
+<section id="registration" class="page-section">
+<div class="container">
     <div class="reg-header">
       <span class="label">Register</span>
       <h1>Summit Registration</h1>
@@ -1105,11 +1038,50 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       Contact <a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="1f7e7b7276715f6c7e727c7e317c7031657e">[email&#160;protected]</span></a> for group bookings and BBBEE verification letters.
     </div>
   </div>
-</section>
 
-<!-- ── SPONSORSHIP ────────────────────────────────────────────────────────── -->
-<section id="sponsorship" class="page-section section" style="background:var(--white);" >
+
+<footer class="site-footer">
   <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
+  </div>
+</footer>
+</section>
+<section id="sponsorship" class="page-section">
+<div class="container">
     <span class="label">MIS Sponsorship</span>
     <h2 style="font-size:clamp(28px,4vw,48px);margin-bottom:8px;">See the Summit in Action</h2>
 
@@ -1172,26 +1144,62 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── PARTNER STRIP 3 ────────────────────────────────────────────────────── -->
 <div class="partners-strip">
   <div class="container">
-    <div class="inner">
-      <span class="label-row"><span class="label" style="color:var(--muted);">In Partnership With</span></span>
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy" />
-      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2218%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy" />
+    <div class="partners-inner">
+      <span class="label" style="color:var(--muted);text-align:center;width:100%;">In Partnership With</span>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy"/>
+      <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy"/>
     </div>
   </div>
 </div>
-
-<!-- ── EXHIBIT / SPONSOR ──────────────────────────────────────────────────── -->
-<section id="exhibit" class="page-section section" >
+<footer class="site-footer">
   <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
+  </div>
+</footer>
+</section>
+<section id="exhibit" class="page-section">
+<div class="container">
     <span class="label label-light">Get Involved</span>
     <h2 style="font-size:clamp(28px,4vw,48px);color:var(--white);margin-bottom:8px;">Breaking Ground Together</h2>
     <p style="font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:0;max-width:600px;">Three ways to be at the centre of Africa's most important mining conversation in 2026.</p>
@@ -1226,15 +1234,14 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
       <div class="benefit-item"><h4>Legacy</h4><p>Associate your brand with sustainability, accountability, and the long-term transformation of the African mining economy.</p></div>
     </div>
   </div>
-</section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
-<footer class="footer">
+
+<footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa's mining and resource sectors.</p>
-        <a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="ff9e9b929691bf8c9e929c9ed19c90d1859e">[email&#160;protected]</span></a>
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -1245,19 +1252,20 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
           <li><a href="#event-details">Event Details</a></li>
           <li><a href="#registration">MIS Registration</a></li>
           <li><a href="#sponsorship">MIS Sponsorship</a></li>
-          <li><a href="#exhibit">Exhibit/Sponsor</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:admin@samca.co.za"><span class="__cf_email__" data-cfemail="2f4e4b4246416f5c4e424c4e014c4001554e">[email&#160;protected]</span></a></li>
-          <li><a href="mailto:registrations@samca.co.za"><span class="__cf_email__" data-cfemail="cbb9aeaca2b8bfb9aabfa2a4a5b88bb8aaa6a8aae5a8a4e5b1aa">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
         </ul>
-        <h4 style="margin-top:24px;">Addresses</h4>
+        <h4 style="margin-top:24px;">Address</h4>
         <ul>
-          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener">55 Ocean View Sea Point, Cape Town, 8001</a></li>
-          <li><a style="color:rgba(255,255,255,0.4);cursor:default;">Al Mamourah Street — Al Nakheel — Ras Al-Khaimah — UAE</a></li>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View, Sea Point, Cape Town 8001</a></li>
+          <li style="color:rgba(255,255,255,0.35);font-size:13px;">Al Mamourah Street — Ras Al-Khaimah — UAE</li>
         </ul>
       </div>
     </div>
@@ -1267,142 +1275,190 @@ h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
     </div>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</section>
+<section id="partners" class="page-section">
+  <div style="background:var(--coal);padding:80px 0 0;">
+    <div class="container">
+      <span class="label label-light">Strategic Collaboration</span>
+      <h1 style="font-size:clamp(32px,4vw,52px);color:#fff;margin-bottom:20px;max-width:700px;">Our Partnership Philosophy</h1>
+      <p style="font-size:17px;color:rgba(255,255,255,0.7);max-width:800px;line-height:1.8;margin-bottom:56px;">SAMCA Strategic Collaboration and Partnership — We position collaboration and partnerships at the intersection of mining, capital, and community impact, aligning on clear outcomes informed by data-driven insights; we scale what delivers measurable results and leverage our access to connect capability with opportunity ensuring every partnership leaves a tangible, measurable footprint in local value chains and sustainable community development.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:80px;">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:36px 32px;">
+          <div style="font-size:32px;margin-bottom:14px;">🤝</div>
+          <h3 style="font-size:19px;color:#fff;margin-bottom:12px;">Purposeful Alignment</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;">We align partners on clear, measurable outcomes — ensuring every collaboration delivers real impact across the mining value chain.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:36px 32px;">
+          <div style="font-size:32px;margin-bottom:14px;">📊</div>
+          <h3 style="font-size:19px;color:#fff;margin-bottom:12px;">Data-Driven Insight</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;">Informed by evidence and analytics, we scale what delivers measurable results and discontinue what doesn't.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:36px 32px;">
+          <div style="font-size:32px;margin-bottom:14px;">🌍</div>
+          <h3 style="font-size:19px;color:#fff;margin-bottom:12px;">Community Footprint</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;">Every partnership must leave a tangible, measurable footprint in local value chains and sustainable community development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background:var(--cream);padding:80px 0;">
+    <div class="container">
+      <span class="label" style="text-align:center;display:block;margin-bottom:8px;">In Partnership With</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);text-align:center;margin-bottom:12px;">Our Strategic Partners</h2>
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:56px;max-width:560px;margin-left:auto;margin-right:auto;">Organisations who share our commitment to integration, transformation, and shared prosperity across Africa's mining sector.</p>
+      <div class="partner-logos-grid">
+        <img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="Partner" loading="lazy"/>
+<img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Partner" loading="lazy"/>
+<img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="Partner" loading="lazy"/>
+<img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="Partner" loading="lazy"/>
+<img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="Partner" loading="lazy"/>
+<img onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23aaa%22 font-size=%2216%22 font-family=%22sans-serif%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22%3EImage unavailable%3C/text%3E%3C/svg%3E'" src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Platinum District Municipality" loading="lazy"/>
+      </div>
+      <div style="text-align:center;margin-top:64px;padding:48px;background:var(--green-dark);border-radius:12px;">
+        <h3 style="font-size:26px;color:#fff;margin-bottom:12px;font-family:'Playfair Display',serif;">Become a Strategic Partner</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;">Position your organisation at the forefront of Africa's mining evolution. Connect capability with opportunity.</p>
+        <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-orange">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa's mining and resource sectors.</p>
+        <a href="mailto:admin@samca.co.za" class="email-link">admin@samca.co.za</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#pillars">MIS Pillars</a></li>
+          <li><a href="#event-details">Event Details</a></li>
+          <li><a href="#registration">MIS Registration</a></li>
+          <li><a href="#sponsorship">MIS Sponsorship</a></li>
+          <li><a href="#exhibit">Exhibit / Sponsor</a></li>
+          <li><a href="#partners">Strategic Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:admin@samca.co.za">admin@samca.co.za</a></li>
+          <li><a href="mailto:registrations@samca.co.za">registrations@samca.co.za</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Address</h4>
+        <ul>
+          <li><a href="https://maps.google.com/?q=55+Ocean+View+Sea+Point+Cape+Town" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);">55 Ocean View Sea Point, Cape Town, 8001</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAMCA. All rights reserved.</span>
+      <span>Built by <a href="https://www.businesshustle.co.za" target="_blank" rel="noopener">Business Hustle</a></span>
+    </div>
+  </div>
+</footer>
+</section>
 <script>
-(function() {
 
-  var SECTIONS = ['home','who-we-are','pillars','event-details','registration','sponsorship','exhibit'];
-  var current  = null;
+(function () {
+  'use strict';
 
-  // ── Show a section by ID ──────────────────────────────────────────────────
-  function showSection(id) {
-    if (!SECTIONS.includes(id)) id = 'home';
-    if (id === current) return;
-    current = id;
+  var PAGES = ['home','who-we-are','pillars','event-details','registration','sponsorship','exhibit','partners'];
+  var currentPage = null;
 
-    // Hide all, show target
-    SECTIONS.forEach(function(sid) {
-      var el = document.getElementById(sid);
-      if (!el) return;
-      el.classList.remove('active', 'fade-in');
-      el.style.display = 'none';
+  /* ── Show page ── */
+  function show(id) {
+    if (!PAGES.includes(id)) id = 'home';
+    if (id === currentPage) return;
+    currentPage = id;
+
+    PAGES.forEach(function (pid) {
+      var el = document.getElementById(pid);
+      if (el) { el.classList.remove('active'); el.style.display = 'none'; }
     });
 
     var target = document.getElementById(id);
     if (!target) return;
     target.style.display = 'block';
-    // Force reflow then animate
-    target.offsetHeight; // eslint-disable-line
-    target.classList.add('active', 'fade-in');
-
-    // Scroll to top of page
+    // force reflow
+    void target.offsetHeight;
+    target.classList.add('active');
     window.scrollTo(0, 0);
-
-    // Update URL hash without triggering scroll
     history.replaceState(null, '', '#' + id);
 
-    // Update active nav links
-    updateActiveNav(id);
-
-    // Update page title
-    var titles = {
-      'home':         'SAMCA | Mining Integration Summit 2026',
-      'who-we-are':   'Who We Are | SAMCA',
-      'pillars':      'MIS Pillars | SAMCA',
-      'event-details':'Event Details | SAMCA',
-      'registration': 'Registration | SAMCA',
-      'sponsorship':  'Sponsorship | SAMCA',
-      'exhibit':      'Exhibit & Sponsor | SAMCA'
-    };
-    document.title = titles[id] || 'SAMCA';
-  }
-
-  // ── Update active nav state ───────────────────────────────────────────────
-  function updateActiveNav(id) {
-    document.querySelectorAll('.nav-links a, .mobile-menu-inner a').forEach(function(a) {
-      a.classList.remove('nav-active');
-      var href = (a.getAttribute('href') || '').replace('#', '');
-      if (href === id) a.classList.add('nav-active');
+    // Active nav
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      var h = a.getAttribute('href').replace('#','');
+      a.classList.toggle('nav-active', h === id);
     });
   }
 
-  // ── Intercept all internal anchor clicks ─────────────────────────────────
-  document.addEventListener('click', function(e) {
+  /* ── Intercept hash clicks ── */
+  document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href]');
     if (!a) return;
     var href = a.getAttribute('href') || '';
     if (!href.startsWith('#')) return;
-    var id = href.replace('#', '');
-    if (!SECTIONS.includes(id)) return;
+    var id = href.slice(1);
+    if (!PAGES.includes(id)) return;
     e.preventDefault();
-    showSection(id);
+    show(id);
     closeMenu();
   });
 
-  // ── Mobile menu ───────────────────────────────────────────────────────────
+  /* ── Mobile menu ── */
   var toggle   = document.getElementById('navToggle');
   var menu     = document.getElementById('mobileMenu');
   var backdrop = document.getElementById('menuBackdrop');
 
   function openMenu() {
-    menu.classList.add('is-open');
-    backdrop.classList.add('is-open');
-    toggle.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
+    [menu, backdrop, toggle].forEach(function (el) { if (el) el.classList.add('is-open'); });
+    toggle && toggle.setAttribute('aria-expanded','true');
     document.body.style.overflow = 'hidden';
   }
   function closeMenu() {
-    menu.classList.remove('is-open');
-    backdrop.classList.remove('is-open');
-    toggle.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
+    [menu, backdrop, toggle].forEach(function (el) { if (el) el.classList.remove('is-open'); });
+    toggle && toggle.setAttribute('aria-expanded','false');
     document.body.style.overflow = '';
   }
 
-  toggle.addEventListener('click', function() {
-    menu.classList.contains('is-open') ? closeMenu() : openMenu();
-  });
-  backdrop.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
-  window.addEventListener('resize', function() { if (window.innerWidth > 820) closeMenu(); });
+  if (toggle)   toggle.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize',    function ()  { if (window.innerWidth > 820) closeMenu(); });
 
-  // ── Newsletter form ───────────────────────────────────────────────────────
-  document.addEventListener('submit', function(e) {
-    var form = e.target;
-    if (form.id !== 'newsletterForm') return;
+  /* ── Newsletter ── */
+  document.addEventListener('submit', function (e) {
+    if (e.target.id !== 'newsletterForm') return;
     e.preventDefault();
+    var form  = e.target;
     var btn   = form.querySelector('button[type="submit"]');
-    var email = (form.querySelector('input[name="email"]') || {}).value || '';
-    email = email.trim();
+    var email = (form.querySelector('input[name="email"]') || {value:''}).value.trim();
     if (!email) { alert('Please enter your email address.'); return; }
     btn.disabled = true;
     btn.textContent = 'Subscribing…';
     fetch('https://script.google.com/macros/s/AKfycbzGvP51xCkknJHw_EkSWfj_zN4-FBHJzMBM0rU1OfTBkf_iKQHy_A1rTkJWJLgbJA/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      mode: 'no-cors',
+      method: 'POST', headers: {'Content-Type':'application/json'}, mode: 'no-cors',
       body: JSON.stringify({
-        type:     'newsletter',
-        email:    email,
-        name:     (form.querySelector('input[name="name"]')     || {}).value || '',
-        phone:    (form.querySelector('input[name="phone"]')    || {}).value || '',
-        location: (form.querySelector('input[name="location"]') || {}).value || '',
-        company:  (form.querySelector('input[name="company"]')  || {}).value || '',
-        notes:    (form.querySelector('textarea[name="notes"]') || {}).value || ''
+        type: 'newsletter', email: email,
+        name:     (form.querySelector('input[name="name"]')     ||{value:''}).value,
+        phone:    (form.querySelector('input[name="phone"]')    ||{value:''}).value,
+        location: (form.querySelector('input[name="location"]') ||{value:''}).value,
+        company:  (form.querySelector('input[name="company"]')  ||{value:''}).value,
+        notes:    (form.querySelector('textarea[name="notes"]') ||{value:''}).value
       })
-    }).finally(function() {
-      form.innerHTML = '<p style="color:var(--green-mid);font-size:16px;font-weight:600;padding:24px 0;">✓ Subscribed! Thank you.</p>';
+    }).finally(function () {
+      form.innerHTML = '<p style="color:#3a7222;font-size:16px;font-weight:600;padding:24px 0;">✓ Subscribed — thank you!</p>';
     });
   });
 
-  // ── Init on DOMContentLoaded ──────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', function() {
-    var hash = (window.location.hash || '#home').replace('#', '');
-    showSection(SECTIONS.includes(hash) ? hash : 'home');
-  });
+  /* ── Init ── */
+  var initHash = (window.location.hash || '').slice(1);
+  show(PAGES.includes(initHash) ? initHash : 'home');
+}());
 
-})();
 </script>
 </body>
 </html>
