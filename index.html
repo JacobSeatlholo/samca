@@ -96,11 +96,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bott
 .plbl{font-family:var(--sf);font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--coal);text-align:center;display:block;margin-bottom:8px;letter-spacing:-.01em}
 .plbl-sub{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;text-align:center;margin-bottom:44px}
 .plogos{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.plogo-item{display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 20px;border:1px solid var(--ld);background:var(--li);transition:box-shadow .25s,transform .25s}
-.plogo-item:hover{box-shadow:0 8px 32px rgba(200,136,14,.15);transform:translateY(-3px)}
-.plogo-item img{height:90px;width:auto;max-width:140px;object-fit:contain}
-.plogo-item span{font-family:var(--sc);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-align:center;line-height:1.4}
-.plogo-item strong{font-family:var(--sf);font-size:14px;font-weight:600;color:var(--coal);text-align:center;line-height:1.3}
+.plogo-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px 24px;border:1px solid var(--ld);background:var(--li);transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit}
+.plogo-item:hover{box-shadow:0 10px 36px rgba(200,136,14,.18);transform:translateY(-4px);border-color:rgba(200,136,14,.4)}
+.plogo-item img{height:120px;width:auto;max-width:180px;object-fit:contain}
+.plogo-item strong{font-family:var(--sf);font-size:15px;font-weight:600;color:var(--coal);text-align:center;line-height:1.3}
 @media(max-width:900px){.parts{padding:44px 24px}.plogos{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.plogos{grid-template-columns:1fr 1fr}}
 
@@ -318,12 +317,11 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 /* Sponsor cards */
 .scard{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;padding:40px 28px;border:1px solid var(--ld);text-decoration:none;transition:box-shadow .3s,transform .3s}
 .scard:hover{box-shadow:0 16px 48px rgba(200,136,14,.18);transform:translateY(-4px)}
-.scard img{height:90px;width:auto;max-width:100%;object-fit:contain;display:block;margin-bottom:24px;filter:none;opacity:1}
-.scard h3{font-family:var(--sf);font-size:clamp(18px,2.5vw,22px);font-weight:600;color:var(--coal);text-align:center;margin-bottom:8px;line-height:1.3}
-.scard span{font-family:var(--sc);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.scard img{height:140px;width:auto;max-width:100%;object-fit:contain;display:block;margin-bottom:24px;filter:none;opacity:1}
+.scard h3{font-family:var(--sf);font-size:clamp(18px,2.5vw,22px);font-weight:600;color:var(--coal);text-align:center;line-height:1.3}
 .scard-featured{border-color:var(--gold);border-width:2px}
-.scard-featured img{height:100px}
-@media(max-width:600px){.scard{padding:32px 20px}.scard img{height:70px}.scard-featured img{height:80px}}
+.scard-featured img{height:160px}
+@media(max-width:600px){.scard{padding:32px 20px}.scard img{height:100px}.scard-featured img{height:120px}}
 </style>
 </head>
 <body>
@@ -442,13 +440,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 
 <div class="ctas"><h2>You are invited to an exclusive, high-level dialogue shaping the future of mining in South Africa.</h2><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bw">Register Now</a></div>
@@ -500,13 +499,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 </section>
 
@@ -586,13 +586,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 </section>
 
@@ -612,13 +613,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 </section>
 
@@ -650,13 +652,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 </section>
 
@@ -692,45 +695,39 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <div class="spons-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto">
 
     <!-- BEE novation -->
-    <a href="#" target="_blank" class="scard">
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="scard">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation">
       <h3>BEE novation</h3>
-      <span>Strategic Partner</span>
     </a>
 
     <!-- School is Cool Program -->
-    <a href="#" target="_blank" class="scard">
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="scard">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program">
       <h3>School is Cool Program</h3>
-      <span>Education Partner</span>
     </a>
 
     <!-- The Ward Foundation R&D -->
-    <a href="#" target="_blank" class="scard">
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="scard">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&D">
       <h3>The Ward Foundation R&amp;D</h3>
-      <span>Research Partner</span>
     </a>
 
     <!-- Flowsync -->
-    <a href="#" target="_blank" class="scard">
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="scard">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync">
       <h3>Flowsync</h3>
-      <span>Technology Partner</span>
     </a>
 
     <!-- The Mining Integration Summit -->
-    <a href="#" target="_blank" class="scard scard-featured">
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="scard scard-featured">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit">
       <h3>The Mining Integration Summit</h3>
-      <span>Principal Partner</span>
     </a>
 
     <!-- Bojanala Local House -->
-    <a href="#" target="_blank" class="scard">
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="scard">
       <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House">
       <h3>Bojanala Local House</h3>
-      <span>Community Partner</span>
     </a>
 
   </div>
@@ -747,13 +744,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <span class="plbl">In Partnership With</span>
   <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
   <div class="plogos">
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong><span>Principal Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong><span>Technology Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong><span>Research Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong><span>Education Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong><span>Strategic Partner</span></div>
-    <div class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong><span>Community Partner</span></div>
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
   </div>
+</div>
 </div>
 
 </section>
