@@ -16,19 +16,20 @@ img{display:block;max-width:100%}a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bottom:1px solid rgba(200,136,14,.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:var(--nh);box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nlogo img{height:58px;width:auto;object-fit:contain;display:block}
 .nlinks{display:flex;align-items:center;list-style:none}
-.nlinks a{font-family:var(--ss);font-size:12.5px;font-weight:500;color:#333;padding:6px 10px;white-space:nowrap;transition:color .2s;cursor:pointer;display:block;letter-spacing:.02em}
-.nlinks a:hover,.nlinks a.on{color:var(--gold)}.nlinks a.on{font-weight:700}
+.nlinks a,.nlinks button{font-family:var(--ss);font-size:12.5px;font-weight:500;color:#333;padding:6px 10px;white-space:nowrap;transition:color .2s;cursor:pointer;display:block;letter-spacing:.02em;background:none;border:none;text-decoration:none}
+.nlinks a:hover,.nlinks button:hover,.nlinks a.on,.nlinks button.on{color:var(--gold)}.nlinks a.on,.nlinks button.on{font-weight:700}
 .ncta{background:var(--gold)!important;color:#fff!important;font-weight:700!important;padding:9px 18px!important;border-radius:2px!important;margin-left:8px}
 .ncta:hover{background:#a3700a!important;color:#fff!important}
-.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;-webkit-tap-highlight-color:transparent}
 .ham span{display:block;width:26px;height:2px;background:var(--coal);transition:.3s}
 .ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .ham.open span:nth-child(2){opacity:0}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mmenu{display:none;position:fixed;top:var(--nh);left:0;right:0;background:#fff;border-bottom:3px solid var(--gold);z-index:8999;padding:16px 24px 28px;flex-direction:column;box-shadow:0 16px 40px rgba(0,0,0,.15)}
+.mmenu{display:none;position:fixed;top:var(--nh);left:0;right:0;background:#fff;border-bottom:3px solid var(--gold);z-index:8999;padding:16px 24px 28px;flex-direction:column;box-shadow:0 16px 40px rgba(0,0,0,.15);-webkit-overflow-scrolling:touch}
 .mmenu.open{display:flex}
-.mmenu a{font-size:16px;font-weight:500;color:#222;padding:14px 0;border-bottom:1px solid var(--ld);cursor:pointer;transition:color .2s;display:block}
-.mmenu a:hover{color:var(--gold)}.mmenu .mc{color:var(--gold);font-weight:700;border:none;margin-top:12px}
+.mmenu a,.mmenu button{font-size:16px;font-weight:500;color:#222;padding:14px 0;border-bottom:1px solid var(--ld);cursor:pointer;transition:color .2s;display:block;background:none;border-left:none;border-right:none;border-top:none;text-align:left;width:100%;font-family:var(--ss);-webkit-tap-highlight-color:transparent}
+.mmenu a:last-child,.mmenu button:last-child{border-bottom:none}
+.mmenu a:hover,.mmenu button:hover{color:var(--gold)}.mmenu .mc{color:var(--gold);font-weight:700;border:none;margin-top:12px;text-decoration:none}
 .pw{padding-top:var(--nh)}
 
 .lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.96);align-items:center;justify-content:center}
@@ -94,7 +95,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bott
 .parts{background:var(--ld);padding:36px 60px;display:flex;align-items:center;gap:48px;flex-wrap:wrap}
 .plbl{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gr);white-space:nowrap}
 .plogos{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
-.plogos img{height:70px;width:auto;object-fit:contain;filter:grayscale(1) opacity(.55);transition:filter .3s}
+.plogos img{height:70px;width:auto;object-fit:contain;filter:grayscale(0) opacity(1);transition:filter .3s}
 .plogos img:hover{filter:grayscale(0) opacity(1)}
 
 .ctas{background:var(--gold);padding:64px 60px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
@@ -308,38 +309,38 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 </head>
 <body>
 <nav>
-  <a href="javascript:void(0)" class="nlogo" onclick="go('home')">
+  <a href="javascript:void(0)" class="nlogo" id="nav-logo">
     <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Official-SAMCA-logo.png" alt="SAMCA">
   </a>
   <ul class="nlinks">
-    <li><a id="nl-home" class="on" onclick="go('home')">Home</a></li>
-    <li><a id="nl-who" onclick="go('who')">Who We Are</a></li>
-    <li><a id="nl-pillars" onclick="go('pillars')">MIS Pillars</a></li>
-    <li><a id="nl-event" onclick="go('event')">Event Details</a></li>
-    <li><a id="nl-registration" onclick="go('registration')">MIS Registration</a></li>
-    <li><a id="nl-sponsorship" onclick="go('sponsorship')">MIS Sponsorship</a></li>
-    <li><a id="nl-exhibit" onclick="go('exhibit')">Exhibit/Sponsor</a></li>
-    <li><a id="nl-newsletter" onclick="go('newsletter')">Newsletter</a></li>
+    <li><button id="nl-home" class="on" data-page="home">Home</button></li>
+    <li><button id="nl-who" data-page="who">Who We Are</button></li>
+    <li><button id="nl-pillars" data-page="pillars">MIS Pillars</button></li>
+    <li><button id="nl-event" data-page="event">Event Details</button></li>
+    <li><button id="nl-registration" data-page="registration">MIS Registration</button></li>
+    <li><button id="nl-sponsorship" data-page="sponsorship">MIS Sponsorship</button></li>
+    <li><button id="nl-exhibit" data-page="exhibit">Exhibit/Sponsor</button></li>
+    <li><button id="nl-newsletter" data-page="newsletter">Newsletter</button></li>
     <li><a href="https://mining-summit-form.vercel.app/" target="_blank" class="ncta">Register Now</a></li>
   </ul>
-  <button class="ham" id="ham" onclick="toggleMenu()" aria-label="Open menu">
+  <button class="ham" id="ham" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mmenu" id="mob">
-  <a onclick="go('home');closeMob()">Home</a>
-  <a onclick="go('who');closeMob()">Who We Are</a>
-  <a onclick="go('pillars');closeMob()">MIS Pillars</a>
-  <a onclick="go('event');closeMob()">Event Details</a>
-  <a onclick="go('registration');closeMob()">MIS Registration</a>
-  <a onclick="go('sponsorship');closeMob()">MIS Sponsorship</a>
-  <a onclick="go('exhibit');closeMob()">Exhibit/Sponsor</a>
-  <a onclick="go('newsletter');closeMob()">Newsletter</a>
+  <button data-page="home">Home</button>
+  <button data-page="who">Who We Are</button>
+  <button data-page="pillars">MIS Pillars</button>
+  <button data-page="event">Event Details</button>
+  <button data-page="registration">MIS Registration</button>
+  <button data-page="sponsorship">MIS Sponsorship</button>
+  <button data-page="exhibit">Exhibit/Sponsor</button>
+  <button data-page="newsletter">Newsletter</button>
   <a href="https://mining-summit-form.vercel.app/" target="_blank" class="mc">Register Now &rarr;</a>
 </div>
-<div class="lb" id="lb" onclick="closeLb(event)">
+<div class="lb" id="lb">
   <div class="lbi">
-    <button class="lbx" onclick="forceCloseLb()">&times;</button>
+    <button class="lbx" id="lbx">&times;</button>
     <video id="lbv" controls playsinline></video>
   </div>
 </div>
@@ -352,27 +353,27 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa&rsquo;s mining and resource sectors.</p>
   <div class="hbtns">
     <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
-    <a onclick="go('who')" class="btn bow">Who We Are</a>
+    <a data-page="who" class="btn bow">Who We Are</a>
   </div>
 </div></div>
 
 <div class="hcards">
-  <div class="hcard" onclick="go('event')">
+  <div class="hcard" data-page="event">
     <div class="hcbg" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png')"></div>
     <div class="hcov"></div><div class="hcc">
       <div class="hclbl">Annual Event</div>
       <h2>Mining Integration Summit 2026</h2>
       <p>Sustainable Harmony and Accountability for Inclusive Growth Across Africa.</p>
-      <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg" onclick="event.stopPropagation()">Register Now</a>
+      <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
     </div>
   </div>
-  <div class="hcard" onclick="go('pillars')">
+  <div class="hcard" data-page="pillars">
     <div class="hcbg" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png')"></div>
     <div class="hcov"></div><div class="hcc">
       <div class="hclbl">Framework</div>
       <h2>Environmental, Social &amp; Entrepreneur&rsquo;s Hub</h2>
       <p>Our Pillars: Integration, Impact, Transformation and Sustainability.</p>
-      <a onclick="go('pillars');event.stopPropagation()" class="btn bow">Learn More</a>
+      <a class="btn bow hcard-learn" data-page="pillars">Learn More</a>
     </div>
   </div>
 </div>
@@ -384,7 +385,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
     <div class="cbody">
       <span class="tag tl">Feature</span>
       <h3>Conversations with Vuyolwethu Zungula &mdash; Member of Parliament</h3>
-      <button class="playbtn" onclick="openLb('https://app.businesshustle.co.za/wp-content/uploads/2026/04/VIDEO-2026-03-26-08-27-05.mp4')">
+      <button class="playbtn" class="playbtn" data-src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/VIDEO-2026-03-26-08-27-05.mp4">
         <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" stroke="currentColor" stroke-width="1.5"/><polygon points="18,14 34,22 18,30" fill="currentColor"/></svg>Watch Full Feature
       </button>
     </div>
@@ -395,7 +396,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
     <div class="cbody">
       <span class="tag tl">Interview</span>
       <h3>Conversations with Lucy P Ngwabeni</h3>
-      <button class="playbtn" onclick="openLb('https://app.businesshustle.co.za/wp-content/uploads/2026/04/Conversation-with-Lucy-P-Ngwabeni.mp4')">
+      <button class="playbtn" class="playbtn" data-src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Conversation-with-Lucy-P-Ngwabeni.mp4">
         <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" stroke="currentColor" stroke-width="1.5"/><polygon points="18,14 34,22 18,30" fill="currentColor"/></svg>Watch Interview
       </button>
     </div>
@@ -435,12 +436,6 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   </div>
 </div>
 
-<div class="gal">
-  <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png" alt="" loading="lazy">
-  <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/2.png" alt="" loading="lazy">
-  <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" alt="" loading="lazy">
-  <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png" alt="" loading="lazy">
-</div>
 </section>
 
 <section id="who" style="display:none">
@@ -483,7 +478,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <div class="pcard"><div class="pnum">03</div><h3>Pillar Three</h3><h4>Empowerment &amp; Leadership</h4><p>Increasing representation and creating pathways to leadership for underrepresented groups.</p><ul class="pl"><li>Increasing women&rsquo;s participation across the value chain</li><li>Expanding procurement for women-owned enterprises</li><li>Addressing barriers to entry within mining careers</li></ul></div>
   <div class="pcard"><div class="pnum">04</div><h3>Pillar Four</h3><h4>Pathways to Opportunity</h4><p>A Youth in Mining Platform focused on building the next generation of sector leaders.</p><ul class="pl"><li>Connecting youth with training and apprenticeship opportunities</li><li>Youth-led innovation in mining technologies</li><li>Investment and mentorship for young entrepreneurs</li><li>Pathways from education into the mining workforce</li></ul></div>
   <div class="pcard"><div class="pnum">05</div><h3>Pillar Five</h3><h4>Compliance &amp; Policy Through Integration</h4><p>Key indicators highlighting the strategic importance of mining to the South African economy.</p><ul class="pl"><li>Mining contributes approximately 7&ndash;8% of South Africa&rsquo;s GDP</li><li>The sector supports more than 450,000 direct jobs</li><li>Mining exports generate over R1 trillion annually</li></ul></div>
-  <div class="pcard" style="background:var(--li)"><div class="pnum" style="color:rgba(200,136,14,.18)">06</div><h3>Pillar Six</h3><h4>School Innovation Program</h4><p>Schools participate in a structured competition developing innovative, community-focused solutions addressing real mining challenges.</p><div style="margin-top:24px"><a onclick="go('event')" class="btn bg">Learn More</a></div></div>
+  <div class="pcard" style="background:var(--li)"><div class="pnum" style="color:rgba(200,136,14,.18)">06</div><h3>Pillar Six</h3><h4>School Innovation Program</h4><p>Schools participate in a structured competition developing innovative, community-focused solutions addressing real mining challenges.</p><div style="margin-top:24px"><a id="pillar6-btn" class="btn bg">Learn More</a></div></div>
 </div>
 <div class="stats"><div class="stat"><div class="stn">7&ndash;8%</div><div class="stl">of South Africa&rsquo;s GDP</div></div><div class="stat"><div class="stn">450K+</div><div class="stl">Direct Jobs Supported</div></div><div class="stat"><div class="stn">R1T+</div><div class="stl">Export Revenue Annually</div></div></div>
 <div class="ssch">
@@ -589,14 +584,14 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 <footer>
   <div class="fb"><p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa&rsquo;s mining and resource sectors.</p><div class="fe"><a href="/cdn-cgi/l/email-protection#4726232a2e290734262a2426692428693d26"><span class="__cf_email__" data-cfemail="b1d0d5dcd8dff1c2d0dcd2d09fd2de9fcbd0">[email&#160;protected]</span></a></div></div>
   <div class="fc2"><h4>Navigation</h4><ul>
-    <li><a onclick="go('home')">Home</a></li>
-    <li><a onclick="go('who')">Who We Are</a></li>
-    <li><a onclick="go('pillars')">MIS Pillars</a></li>
-    <li><a onclick="go('event')">Event Details</a></li>
-    <li><a onclick="go('registration')">MIS Registration</a></li>
-    <li><a onclick="go('sponsorship')">MIS Sponsorship</a></li>
-    <li><a onclick="go('exhibit')">Exhibit/Sponsor</a></li>
-    <li><a onclick="go('newsletter')">Newsletter</a></li>
+    <li><a data-page="home">Home</a></li>
+    <li><a data-page="who">Who We Are</a></li>
+    <li><a data-page="pillars">MIS Pillars</a></li>
+    <li><a data-page="event">Event Details</a></li>
+    <li><a data-page="registration">MIS Registration</a></li>
+    <li><a data-page="sponsorship">MIS Sponsorship</a></li>
+    <li><a data-page="exhibit">Exhibit/Sponsor</a></li>
+    <li><a data-page="newsletter">Newsletter</a></li>
   </ul></div>
   <div class="fc2"><h4>Contact</h4><ul><li><a href="/cdn-cgi/l/email-protection#1a7b7e7773745a697b77797b34797534607b"><span class="__cf_email__" data-cfemail="7e1f1a1317103e0d1f131d1f501d1150041f">[email&#160;protected]</span></a></li><li><a href="/cdn-cgi/l/email-protection#a2d0c7c5cbd1d6d0c3d6cbcdccd1e2d1c3cfc1c38cc1cd8cd8c3"><span class="__cf_email__" data-cfemail="9eecfbf9f7edeaecffeaf7f1f0eddeedfff3fdffb0fdf1b0e4ff">[email&#160;protected]</span></a></li></ul>
   <h4 style="margin-top:24px">Addresses</h4><ul><li><a>55 Ocean View Sea Point, Cape Town, 8001</a></li><li><a>Al Mamourah Street, Al Nakheel, Ras Al-Khaimah, UAE</a></li></ul></div>
@@ -604,40 +599,121 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 <div class="fbot"><p>&copy; 2026 SAMCA. All rights reserved.</p><span class="bhc">Built by Business Hustle</span></div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var PAGES = ['home','who','pillars','event','registration','sponsorship','exhibit','newsletter'];
+<script>
+(function() {
+  var PAGES = ['home','who','pillars','event','registration','sponsorship','exhibit','newsletter'];
 
-function go(page) {
-  for (var i = 0; i < PAGES.length; i++) {
-    var el = document.getElementById(PAGES[i]);
-    if (el) el.style.display = (PAGES[i] === page) ? '' : 'none';
-    var nav = document.getElementById('nl-' + PAGES[i]);
-    if (nav) nav.className = (PAGES[i] === page) ? 'on' : '';
+  function go(page) {
+    for (var i = 0; i < PAGES.length; i++) {
+      var el = document.getElementById(PAGES[i]);
+      if (el) el.style.display = (PAGES[i] === page) ? '' : 'none';
+      var btn = document.getElementById('nl-' + PAGES[i]);
+      if (btn) btn.className = (PAGES[i] === page) ? 'on' : '';
+    }
+    window.scrollTo(0, 0);
+    closeMob();
   }
-  window.scrollTo(0, 0);
-}
 
-function toggleMenu() {
-  var m = document.getElementById('mob');
-  var h = document.getElementById('ham');
-  var open = m.classList.contains('open');
-  if (open) { m.classList.remove('open'); h.classList.remove('open'); }
-  else { m.classList.add('open'); h.classList.add('open'); }
-}
+  function toggleMenu() {
+    var m = document.getElementById('mob');
+    var h = document.getElementById('ham');
+    if (m.classList.contains('open')) {
+      m.classList.remove('open'); h.classList.remove('open');
+    } else {
+      m.classList.add('open'); h.classList.add('open');
+    }
+  }
 
-function closeMob() {
-  document.getElementById('mob').classList.remove('open');
-  document.getElementById('ham').classList.remove('open');
-}
+  function closeMob() {
+    document.getElementById('mob').classList.remove('open');
+    document.getElementById('ham').classList.remove('open');
+  }
 
-function openLb(src) {
-  var lb = document.getElementById('lb');
-  var v = document.getElementById('lbv');
-  v.src = src;
-  lb.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  try { v.play(); } catch(e) {}
-}
+  function openLb(src) {
+    var v = document.getElementById('lbv');
+    v.src = src;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    try { v.play(); } catch(e) {}
+  }
 
-function forceCloseLb() {
-  var
+  function forceCloseLb() {
+    var v = document.getElementById('lbv');
+    try { v.pause(); } catch(e) {}
+    v.src = '';
+    document.getElementById('lb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  window.go = go;
+  window.openLb = openLb;
+  window.forceCloseLb = forceCloseLb;
+
+  function bind(el, fn) {
+    el.addEventListener('click', fn);
+    el.addEventListener('touchend', function(e) { e.preventDefault(); fn(e); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Logo
+    var logo = document.getElementById('nav-logo');
+    if (logo) bind(logo, function(e) { e.preventDefault(); go('home'); });
+
+    // All [data-page] elements (nav buttons, mobile menu buttons, footer links, cards)
+    var all = document.querySelectorAll('[data-page]');
+    for (var i = 0; i < all.length; i++) {
+      (function(el) {
+        var page = el.getAttribute('data-page');
+        // for cards, only fire if not clicking a child <a>
+        if (el.classList.contains('hcard')) {
+          el.addEventListener('click', function(e) { if (!e.target.closest('a')) go(page); });
+          el.addEventListener('touchend', function(e) { if (!e.target.closest('a')) { e.preventDefault(); go(page); } });
+        } else {
+          bind(el, function(e) { e.preventDefault(); go(page); });
+        }
+      })(all[i]);
+    }
+
+    // Hamburger
+    var ham = document.getElementById('ham');
+    bind(ham, function(e) { e.stopPropagation(); toggleMenu(); });
+
+    // Lightbox backdrop
+    var lb = document.getElementById('lb');
+    lb.addEventListener('click', function(e) { if (e.target === lb) forceCloseLb(); });
+    lb.addEventListener('touchend', function(e) { if (e.target === lb) { e.preventDefault(); forceCloseLb(); } });
+
+    // Lightbox close button
+    var lbx = document.getElementById('lbx');
+    if (lbx) bind(lbx, function() { forceCloseLb(); });
+
+    // Play buttons (data-src)
+    var plays = document.querySelectorAll('[data-src]');
+    for (var p = 0; p < plays.length; p++) {
+      (function(btn) {
+        var src = btn.getAttribute('data-src');
+        bind(btn, function(e) { e.stopPropagation(); openLb(src); });
+      })(plays[p]);
+    }
+
+    // Pillar 6 learn more
+    var p6 = document.getElementById('pillar6-btn');
+    if (p6) bind(p6, function(e) { e.preventDefault(); go('event'); });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') forceCloseLb(); });
+
+    // Close menu on outside tap
+    document.addEventListener('click', function(e) {
+      var m = document.getElementById('mob');
+      var h = document.getElementById('ham');
+      if (m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) closeMob();
+    });
+
+    go('home');
+  });
+})();
+</script>
+</body>
+</html>
