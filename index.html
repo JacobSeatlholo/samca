@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#c8880e;--gl:#e0a82e;--coal:#0e0e0e;--ch:#1a1a1a;--li:#faf7f2;--ld:#ede5d8;--w:#fff;--gr:#5a5a5a;--sf:'Cormorant Garamond',Georgia,serif;--ss:'Barlow',sans-serif;--sc:'Barlow Condensed',sans-serif;--nh:76px}
+:root{--gold:#d4920f;--gl:#f0b830;--coal:#111;--ch:#222;--li:#fdf9f4;--ld:#e8ddd0;--w:#fff;--gr:#4a4a4a;--sf:'Cormorant Garamond',Georgia,serif;--ss:'Barlow',sans-serif;--sc:'Barlow Condensed',sans-serif;--nh:76px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}body{font-family:var(--ss);background:#fff;color:var(--coal);overflow-x:hidden}
 img{display:block;max-width:100%}a{text-decoration:none;color:inherit}
@@ -262,24 +262,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bott
 .exir{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--coal);padding:3px}
 .exir img{width:100%;height:280px;object-fit:cover;opacity:.9;transition:opacity .3s}
 .exir img:hover{opacity:1}
-.exb{background:var(--coal);padding:72px 60px}
-.exb h2{font-family:var(--sf);font-size:clamp(28px,3.5vw,46px);font-weight:600;color:#fff;line-height:1.15;margin:10px 0 36px}
+.exb{background:var(--li);padding:72px 60px}
+.exb h2{font-family:var(--sf);font-size:clamp(28px,3.5vw,46px);font-weight:600;color:var(--coal);line-height:1.15;margin:10px 0 36px}
 .bg2{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.bi{padding:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
-.bi p{font-size:14px;font-weight:300;color:rgba(255,255,255,.68);line-height:1.7;margin-top:8px}
+.bi{padding:28px;background:#fff;border:1px solid var(--ld)}
+.bi p{font-size:14px;font-weight:300;color:var(--gr);line-height:1.7;margin-top:8px}
 
-footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:64px 60px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
-.fb p{font-size:14px;font-weight:300;color:rgba(255,255,255,.52);line-height:1.72;max-width:320px;margin-bottom:20px}
-.fe a{font-size:14px;color:var(--gl);transition:color .2s}.fe a:hover{color:#fff}
-.fc2 h4{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px}
+footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.fb p{font-size:14px;font-weight:300;color:var(--gr);line-height:1.72;max-width:320px;margin-bottom:20px}
+.fe a{font-size:14px;color:var(--gold);transition:color .2s}.fe a:hover{color:var(--coal)}
+.fc2 h4{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
 .fc2 ul{list-style:none}.fc2 ul li{margin-bottom:10px}
-.fc2 ul li a{font-size:14px;font-weight:300;color:rgba(255,255,255,.52);transition:color .2s;cursor:pointer;display:block}
-.fc2 ul li a:hover{color:var(--gl)}
+.fc2 ul li a{font-size:14px;font-weight:300;color:var(--gr);transition:color .2s;cursor:pointer;display:block}
+.fc2 ul li a:hover{color:var(--gold)}
 .fbot{background:#070707;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .fbot p{font-size:12.5px;color:rgba(255,255,255,.25);font-weight:300}
 .bhc{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 
-@media(max-width:900px){.news-hero-body{padding:40px 24px 48px!important}}
 
 @media(max-width:900px){
   nav{padding:0 20px}.nlinks{display:none}.ham{display:flex}
@@ -307,7 +306,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   .sks{padding:52px 24px}.skg{grid-template-columns:1fr 1fr}.pol,.por{padding:52px 24px}
   .exhi{height:280px;position:relative}.exht{padding:52px 24px}.excd{border-right:none}
   .exir{grid-template-columns:1fr}.exir img{height:200px}.exb{padding:52px 24px}.bg2{grid-template-columns:1fr}
-  footer{grid-template-columns:1fr;padding:48px 24px;gap:32px}.fbot{padding:16px 24px}
+  footer{grid-template-columns:1fr!important;padding:48px 24px;gap:32px}.fbot{padding:16px 24px}
   .phc{padding:36px 24px}.spils{grid-template-columns:1fr}
 }
 @media(max-width:600px){.tg{grid-template-columns:1fr}.skg{grid-template-columns:1fr}}
@@ -322,6 +321,30 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 .scard-featured{border-color:var(--gold);border-width:2px}
 .scard-featured img{height:160px}
 @media(max-width:600px){.scard{padding:32px 20px}.scard img{height:100px}.scard-featured img{height:120px}}
+
+/* Event invite modal */
+.emodal{display:none;position:fixed;inset:0;z-index:99000;align-items:center;justify-content:center;padding:20px}
+.emodal.open{display:flex}
+.emodal-bg{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}
+.emodal-box{position:relative;z-index:2;background:#fff;max-width:600px;width:100%;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.4)}
+.emodal-img{position:relative;height:240px;overflow:hidden}
+.emodal-img img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.emodal-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)}
+.emodal-badge{position:absolute;bottom:24px;left:28px;font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);border:1px solid rgba(224,168,46,.5);padding:5px 14px}
+.emodal-body{padding:36px 40px 40px}
+.emodal-body h2{font-family:var(--sf);font-size:clamp(22px,3vw,32px);font-weight:600;color:var(--coal);line-height:1.2;margin-bottom:10px}
+.emodal-body p{font-size:14px;font-weight:300;color:var(--gr);line-height:1.7;margin-bottom:28px}
+.emodal-actions{display:flex;gap:12px;flex-wrap:wrap}
+.emodal-close{position:absolute;top:14px;right:16px;z-index:3;background:rgba(0,0,0,.55);border:none;color:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;line-height:1;border-radius:0}
+.emodal-close:hover{background:var(--gold)}
+@media(max-width:600px){.emodal-body{padding:24px}.emodal-actions{flex-direction:column}}
+
+@media(max-width:900px){
+  .who-split{grid-template-columns:1fr!important}
+  .svc-grid{grid-template-columns:1fr!important}
+  .news-hero-body{padding:40px 24px 48px!important}
+  .emodal-box{margin:0 12px}
+}
 </style>
 </head>
 <body>
@@ -422,19 +445,6 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   </div>
 </div>
 
-<div style="position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:var(--coal)">
-  <div style="position:absolute;inset:0;background:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/7.png') center/cover;opacity:.78"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 0%,rgba(10,10,10,.18) 60%)"></div>
-  <div class="news-hero-body" style="position:relative;z-index:2;padding:60px 60px 64px;max-width:760px">
-    <span class="tag tl">Latest News</span>
-    <h2 style="font-family:var(--sf);font-size:clamp(28px,4vw,52px);font-weight:600;color:#fff;line-height:1.1;margin:10px 0 16px">Registration Now Open &mdash; Limited Seats Available</h2>
-    <p style="font-size:16px;font-weight:300;color:rgba(255,255,255,.78);line-height:1.72;margin-bottom:36px;max-width:520px">Delegate numbers are limited to preserve the quality of engagement. Early commitment is strongly advised &mdash; secure your seat at Africa&rsquo;s premier mining summit.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap">
-      <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
-      <a data-page="newsletter" class="btn bow" style="cursor:pointer">Subscribe to Newsletter</a>
-    </div>
-  </div>
-</div>
 
 <div class="parts">
   <span class="plbl">In Partnership With</span>
@@ -452,6 +462,20 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 
 <div class="ctas"><h2>You are invited to an exclusive, high-level dialogue shaping the future of mining in South Africa.</h2><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bw">Register Now</a></div>
 
+<div style="position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:var(--coal)">
+  <div style="position:absolute;inset:0;background:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/7.png') center/cover;opacity:.78"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 0%,rgba(10,10,10,.18) 60%)"></div>
+  <div class="news-hero-body" style="position:relative;z-index:2;padding:60px 60px 64px;max-width:760px">
+    <span class="tag tl">Latest News</span>
+    <h2 style="font-family:var(--sf);font-size:clamp(28px,4vw,52px);font-weight:600;color:#fff;line-height:1.1;margin:10px 0 16px">Registration Now Open &mdash; Limited Seats Available</h2>
+    <p style="font-size:16px;font-weight:300;color:rgba(255,255,255,.78);line-height:1.72;margin-bottom:36px;max-width:520px">Delegate numbers are limited to preserve the quality of engagement. Early commitment is strongly advised &mdash; secure your seat at Africa&rsquo;s premier mining summit.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
+      <a data-page="newsletter" class="btn bow" style="cursor:pointer">Subscribe to Newsletter</a>
+    </div>
+  </div>
+</div>
+
 <div class="nlsec">
   <div class="nll"><span class="tag tl">Stay Informed</span><h2>Subscribe to our Newsletter</h2><p>Where Mining Investment and Opportunity Meet.</p></div>
   <div class="nlr"><h3>SAMCA Newsletter</h3>
@@ -468,27 +492,56 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 </section>
 
 <section id="who" style="display:none">
-<div class="wbody">
-  <div class="wtxt"><span class="tag">Our Mandate</span><h2>Reimagining mining as a force where measurable impact replaces symbolic commitment.</h2>
-    <p>SAMCA exists to solve one of the mining industry&rsquo;s most persistent challenges: the disconnect between mining operations and the communities that host them.</p>
-    <p>Progress is reflected in both economic performance and community wellbeing. We provide the frameworks, advisory services, and platforms that enable mining companies to secure their social license to operate, unlock long-term value, and attract global capital through evidence-based impact.</p>
-    <p>The Summit introduces a complementary and solution-focused platform that prioritises integration, inclusion, and shared economic value within mining communities.</p>
+<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/10.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Our Story</span><h1>Who We Are</h1></div></div>
+<div class="who-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:560px">
+  <div style="padding:72px 60px;background:#fff;display:flex;flex-direction:column;justify-content:center">
+    <span class="tag">Our Mandate</span>
+    <h2 style="font-family:var(--sf);font-size:clamp(28px,3.5vw,46px);font-weight:600;color:var(--coal);line-height:1.15;margin:12px 0 20px">Reimagining mining as a force where measurable impact replaces symbolic commitment.</h2>
+    <p style="font-size:15px;font-weight:300;color:#444;line-height:1.78;margin-bottom:14px">SAMCA exists to solve one of the mining industry&rsquo;s most persistent challenges: the disconnect between mining operations and the communities that host them.</p>
+    <p style="font-size:15px;font-weight:300;color:#444;line-height:1.78;margin-bottom:14px">Progress is reflected in both economic performance and community wellbeing. We provide the frameworks, advisory services, and platforms that enable mining companies to secure their social license to operate, unlock long-term value, and attract global capital through evidence-based impact.</p>
+    <p style="font-size:15px;font-weight:300;color:#444;line-height:1.78">The Summit introduces a complementary and solution-focused platform that prioritises integration, inclusion, and shared economic value within mining communities.</p>
   </div>
-  <div class="wsvcs"><span class="tag">What We Provide</span>
-    <h2 class="st" style="font-size:clamp(22px,2.5vw,32px);margin:10px 0 28px">Our Services</h2>
-    <div class="svc"><div class="sico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><h4>Strategic Advisory Services</h4><p>Expert guidance navigating ESG performance and community engagement frameworks.</p></div></div>
-    <div class="svc"><div class="sico"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><h4>Community Engagement Frameworks</h4><p>Structured development frameworks prioritising community representation, trust, and partnership.</p></div></div>
-    <div class="svc"><div class="sico"><svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><div><h4>Investor-Aligned Sustainability Models</h4><p>Enabling long-term value through evidence-based impact strategies that attract global capital.</p></div></div>
+  <div style="position:relative;overflow:hidden;min-height:400px">
+    <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/10.png" alt="SAMCA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
   </div>
 </div>
-<div class="msec">
-  <div class="mcol"><span class="tag tl">The Summit Serves As A Platform Where:</span><h2>Where Integration Meets Influence</h2>
-    <ul class="bl"><li>Mining houses identify operational needs and opportunities for collaboration</li><li>Communities articulate their development priorities</li><li>Women and youth access pathways into the mining economy</li><li>Strategic partnerships are formed to support long-term sector stability</li></ul>
+<div style="padding:72px 60px;background:var(--li)">
+  <span class="tag">What We Provide</span>
+  <h2 style="font-family:var(--sf);font-size:clamp(22px,2.8vw,36px);font-weight:600;color:var(--coal);margin:12px 0 40px;line-height:1.2">Our Services</h2>
+  <div class="svc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+    <div style="background:#fff;padding:40px 32px;border-top:3px solid var(--gold)">
+      <div style="font-family:var(--sf);font-size:52px;font-weight:600;color:var(--ld);line-height:1;margin-bottom:20px">01</div>
+      <h4 style="font-family:var(--sf);font-size:21px;font-weight:600;color:var(--coal);margin-bottom:12px;line-height:1.3">Strategic Advisory Services</h4>
+      <p style="font-size:14px;font-weight:300;color:var(--gr);line-height:1.7">Expert guidance navigating ESG performance, regulatory compliance, and community engagement frameworks across Africa&rsquo;s mining sector.</p>
+    </div>
+    <div style="background:#fff;padding:40px 32px;border-top:3px solid var(--gold)">
+      <div style="font-family:var(--sf);font-size:52px;font-weight:600;color:var(--ld);line-height:1;margin-bottom:20px">02</div>
+      <h4 style="font-family:var(--sf);font-size:21px;font-weight:600;color:var(--coal);margin-bottom:12px;line-height:1.3">Community Engagement Frameworks</h4>
+      <p style="font-size:14px;font-weight:300;color:var(--gr);line-height:1.7">Structured development frameworks prioritising community representation, trust-building, and genuine partnership between mining houses and host communities.</p>
+    </div>
+    <div style="background:#fff;padding:40px 32px;border-top:3px solid var(--gold)">
+      <div style="font-family:var(--sf);font-size:52px;font-weight:600;color:var(--ld);line-height:1;margin-bottom:20px">03</div>
+      <h4 style="font-family:var(--sf);font-size:21px;font-weight:600;color:var(--coal);margin-bottom:12px;line-height:1.3">Investor-Aligned Sustainability Models</h4>
+      <p style="font-size:14px;font-weight:300;color:var(--gr);line-height:1.7">Enabling long-term value through evidence-based impact strategies that attract global capital and demonstrate measurable social return.</p>
+    </div>
   </div>
-  <div class="mcol"><span class="tag tl">Three Summit Pillars</span><h2>Sustainable Harmony &middot; Accountability &middot; Golf Challenge</h2>
-    <p>Building sustainable harmony through responsible mining, community partnership, environmental care, and economic growth that creates long-term value.</p>
-    <p>Driving accountable transformation through inclusion, skills development, leadership access, and meaningful economic participation in industry.</p>
-    <p>The Mayoral Charity Golf Challenge brings leaders together for networking, partnership building, and giving back beyond the boardroom.</p>
+</div>
+<div style="position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/10.png') center/cover"></div>
+  <div style="position:absolute;inset:0;background:rgba(10,10,10,.78)"></div>
+  <div class="msec" style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr">
+    <div style="padding:72px 60px;border-right:1px solid rgba(255,255,255,.08)">
+      <span class="tag tl">The Summit Serves As A Platform Where:</span>
+      <h2 style="font-family:var(--sf);font-size:clamp(26px,3vw,42px);font-weight:600;color:#fff;line-height:1.18;margin:10px 0 18px">Where Integration Meets Influence</h2>
+      <ul class="bl"><li>Mining houses identify operational needs and opportunities for collaboration</li><li>Communities articulate their development priorities</li><li>Women and youth access pathways into the mining economy</li><li>Strategic partnerships are formed to support long-term sector stability</li></ul>
+    </div>
+    <div style="padding:72px 60px">
+      <span class="tag tl">Three Summit Pillars</span>
+      <h2 style="font-family:var(--sf);font-size:clamp(26px,3vw,42px);font-weight:600;color:#fff;line-height:1.18;margin:10px 0 18px">Sustainable Harmony &middot; Accountability &middot; Golf Challenge</h2>
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.78;margin-bottom:16px">Building sustainable harmony through responsible mining, community partnership, environmental care, and economic growth that creates long-term value.</p>
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.78;margin-bottom:16px">Driving accountable transformation through inclusion, skills development, leadership access, and meaningful economic participation in industry.</p>
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.78">The Mayoral Charity Golf Challenge brings leaders together for networking, partnership building, and giving back beyond the boardroom.</p>
+    </div>
   </div>
 </div>
 <div class="mvsec">
@@ -530,10 +583,10 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 
 <section id="event" style="display:none">
 <div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/6.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">2026 Annual Event</span><h1>Mining Integration Summit 2026</h1></div></div>
-<div style="background:var(--coal);padding:72px 60px;max-width:100%">
-  <span class="tag tl">About the Summit</span>
-  <h2 style="font-family:var(--sf);font-size:clamp(28px,3.5vw,48px);font-weight:600;color:#fff;line-height:1.15;margin:10px 0 18px;max-width:760px">The first platform of its kind dedicated to strengthening the relationship between mining and society.</h2>
-  <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.72);line-height:1.78;margin-bottom:32px;max-width:760px">Dedicated to strengthening the relationship between mining houses, host communities, investors, and government. Across Africa, mining remains one of the most powerful drivers of economic growth, yet long-term success depends on integration, accountability and shared benefit.</p>
+<div style="background:var(--li);padding:72px 60px;max-width:100%;border-bottom:3px solid var(--gold)">
+  <span class="tag">About the Summit</span>
+  <h2 style="font-family:var(--sf);font-size:clamp(28px,3.5vw,48px);font-weight:600;color:var(--coal);line-height:1.15;margin:10px 0 18px;max-width:760px">The first platform of its kind dedicated to strengthening the relationship between mining and society.</h2>
+  <p style="font-size:15px;font-weight:300;color:var(--gr);line-height:1.78;margin-bottom:32px;max-width:760px">Dedicated to strengthening the relationship between mining houses, host communities, investors, and government. Across Africa, mining remains one of the most powerful drivers of economic growth, yet long-term success depends on integration, accountability and shared benefit.</p>
   <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
 </div>
 <div class="spils">
@@ -544,7 +597,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 <div class="fw"><span class="tag">What to Expect</span><h2 class="st">Why Attend the Summit?</h2><div class="fg"><div class="fc"><h3>Policy Meets Implementation</h3><p>High-level dialogue between government officials, mining executives, and community leaders translating policy into on-the-ground action.</p></div><div class="fc"><h3>Capital Meets Opportunity</h3><p>Direct access to investors, financial institutions, and development funding partners actively seeking mining sector opportunities in Africa.</p></div><div class="fc"><h3>Innovation Meets Industry Demand</h3><p>Showcase of cutting-edge technologies, youth-led solutions, and sustainable mining practices addressing the sector&rsquo;s most pressing challenges.</p></div></div></div>
 <div class="dl"><div><span class="tag tl">Registration Deadline</span><h2>Registration is open until 30 June 2026</h2></div><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register</a></div>
 <div class="ssch">
-  <div class="ssl"><span class="tag tl">Education Initiative</span><h2>School Innovation Program</h2><p>Schools participate in a structured competition developing practical, innovative, community-focused solutions addressing issues affecting mining communities.</p><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Learn More</a></div>
+  <div class="ssl" style="background:var(--li)"><span class="tag" style="color:var(--gold)">Education Initiative</span><h2 style="color:var(--coal)">School Innovation Program</h2><p>Schools participate in a structured competition developing practical, innovative, community-focused solutions addressing issues affecting mining communities.</p><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Learn More</a></div>
   <div class="ssr"><h3>Competition Themes</h3><p class="sub">Schools submit solutions addressing real challenges:</p><ul class="tl2"><li>Environmental rehabilitation in mining areas</li><li>Water and soil quality challenges</li><li>Youth unemployment and skills development</li><li>Digital solutions for rural communities</li><li>Community safety and infrastructure</li><li>Energy and sustainability</li><li>Small business and supplier development</li><li>Health and social challenges in mining towns</li><li>Technology in mining or environmental monitoring</li></ul></div>
 </div>
 <div class="vidsec"><span class="tag tl">MIS Sponsorship</span><h2>See the Summit in Action</h2><div class="vw"><video controls preload="none" poster="https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png" playsinline><source src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/SAMCA-Video-MIS-Sponsorship-page.mp4" type="video/mp4"></video></div></div>
@@ -552,6 +605,21 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 
 <section id="registration" style="display:none">
 <div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/5.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Register</span><h1>Summit Registration</h1></div></div>
+<div style="background:var(--li);padding:clamp(48px,6vw,72px) clamp(24px,6vw,60px)">
+  <div style="text-align:center;margin-bottom:48px">
+    <span class="tag">2026 Event Sponsors</span>
+    <h2 style="font-family:var(--sf);font-size:clamp(26px,4vw,48px);font-weight:600;color:var(--coal);line-height:1.12;margin-top:12px">Our Partners &amp; Sponsors</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto 48px">
+    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="scard"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation"><h3>BEE novation</h3></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="scard"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program"><h3>School is Cool Program</h3></a>
+    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="scard"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&D"><h3>The Ward Foundation R&amp;D</h3></a>
+    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="scard"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync"><h3>Flowsync</h3></a>
+    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="scard scard-featured"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit"><h3>The Mining Integration Summit</h3></a>
+    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="scard"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House"><h3>Bojanala Local House</h3></a>
+  </div>
+  <div style="text-align:center"><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a></div>
+</div>
 <div class="ri"><span class="tag">Tickets Now Available</span><h2 class="st">Secure Your Seat at the Summit</h2><p class="sb" style="margin:0 auto 36px">Delegate numbers are limited to preserve the quality of engagement. Early commitment is strongly advised.</p></div>
 <div class="tg">
   <div class="tk f"><div class="tkb">MOST POPULAR</div><div class="tkt">Platinum</div><h3>All Access + Accommodation</h3><ul class="tfl"><li>Priority seating &mdash; Summit &amp; Gala</li><li>1-on-1 Executive Roundtable access</li><li>VIP Golf Day (Foursome entry)</li><li>Curated networking reception (Day 0)</li><li>Digital &amp; print delegate pack</li><li>Post-summit ESG briefing document</li><li>Dedicated concierge support</li><li>Accommodation included</li></ul><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg" style="justify-content:center">Register</a></div>
@@ -564,7 +632,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <div class="ropt"><span class="tag tl">Corporate</span><h3>Become a Sponsor</h3><h4>Become a Contributor</h4><ul class="rfl"><li>4 delegate passes &mdash; Summit &amp; Gala</li><li>Corporate roundtable participation</li><li>Golf Day (2 players)</li><li>Branded exhibition stand (3&times;3 m)</li><li>Digital delegate pack</li><li>Summit recording access (30 days)</li></ul><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a></div>
   <div class="ropt"><span class="tag tl">Community</span><h3>Apply to Volunteer</h3><h4>Work With Us</h4><ul class="rfl"><li>Full Summit access (2 days)</li><li>Gala Dinner seat</li><li>Digital programme &amp; materials</li><li>Networking app access</li><li>Certificate of attendance</li></ul><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Apply Now</a></div>
 </div>
-<div class="rn"><p>All registrations are subject to SAMCA membership verification. Corporate packages require a signed ESG Accord commitment.<br>Contact <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="136176747a60676172677a7c7d605360727e70723d707c3d6972">[email&#160;protected]</a></strong> for group bookings and BBBEE verification letters.</p></div>
+<div class="rn"><p>All registrations are subject to SAMCA membership verification. Corporate packages require a signed ESG Accord commitment.<br>Contact <strong><a href="mailto:info@samca.co.za">info@samca.co.za</a></strong> for group bookings and BBBEE verification letters.</p></div>
 </section>
 
 <section id="sponsorship" style="display:none">
@@ -598,6 +666,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
 </section>
 
 <section id="exhibit" style="display:none">
+<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Get Involved</span><h1>Exhibit &amp; Sponsor</h1></div></div>
 <div class="exh">
   <div class="exht"><span class="tag tl">Get Involved</span><h2>Breaking Ground Together</h2><p>Three ways to be at the centre of Africa&rsquo;s most important mining conversation in 2026. Choose your role and make your mark.</p></div>
   <div class="exhi"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png" alt="" loading="lazy"></div>
@@ -607,7 +676,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <div class="excd"><h3>Become an Exhibitor</h3><p>Engage directly with decision-makers and government officials. Stand out and position your brand for opportunity within a curated exhibition environment that drives real business outcomes.</p><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a></div>
   <div class="excd"><h3>Become a Volunteer</h3><p>Be at the heart of the action. We are looking for passionate, energetic individuals to help us deliver a world-class summit experience and gain invaluable industry exposure.</p><a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Apply Now</a></div>
 </div>
-<div class="exir"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/2.png" alt="" loading="lazy"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" alt="" loading="lazy"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png" alt="" loading="lazy"></div>
+<div class="exir" style="grid-template-columns:1fr 1fr"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" alt="" loading="lazy"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/4.png" alt="" loading="lazy"></div>
 <div class="exb"><span class="tag tl">What You Gain</span><h2>Why Engage With the Mining Integration Summit?</h2><div class="bg2"><div class="bi"><span class="tag tl">Access</span><p>Direct access to high-level decision makers across mining houses, government departments, and financial institutions.</p></div><div class="bi"><span class="tag tl">Brand</span><p>Premium brand positioning within a world-class industry platform with extensive media and digital reach.</p></div><div class="bi"><span class="tag tl">Influence</span><p>Opportunity to shape policy and industry direction through roundtables, panels, and targeted engagements.</p></div><div class="bi"><span class="tag tl">Network</span><p>Build strategic relationships with mining executives, community leaders, investors, and government officials.</p></div><div class="bi"><span class="tag tl">Investment</span><p>Explore deal flow and investment opportunities within Africa&rsquo;s most dynamic resource sector.</p></div><div class="bi"><span class="tag tl">Legacy</span><p>Associate your brand with sustainability, accountability, and long-term transformation of the African mining economy.</p></div></div></div>
 <div class="parts">
   <span class="plbl">In Partnership With</span>
@@ -739,25 +808,33 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
   <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bw">Become a Sponsor</a>
 </div>
 
-<!-- Partners strip -->
-<div class="parts">
-  <span class="plbl">In Partnership With</span>
-  <span class="plbl-sub">Our 2026 Summit Partners &amp; Sponsors</span>
-  <div class="plogos">
-    <a href="https://www.beenovation.co.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/14.png" alt="BEE novation" loading="lazy"><strong>BEE novation</strong></a>
-    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"><strong>School is Cool Program</strong></a>
-    <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"><strong>The Ward Foundation R&amp;D</strong></a>
-    <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"><strong>Flowsync</strong></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"><strong>The Mining Integration Summit</strong></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"><strong>Bojanala Local House</strong></a>
-  </div>
-</div>
 </div>
 
 </section>
 
+<!-- Event invite modal -->
+<div class="emodal" id="emodal">
+  <div class="emodal-bg" id="emodal-bg"></div>
+  <div class="emodal-box">
+    <button class="emodal-close" id="emodal-close">&times;</button>
+    <div class="emodal-img">
+      <img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" alt="Mining Integration Summit 2026">
+      <div class="emodal-img-ov"></div>
+      <span class="emodal-badge">SAMCA &middot; Mining Integration Summit 2026</span>
+    </div>
+    <div class="emodal-body">
+      <h2>You Are Invited to an Exclusive, High-Level Summit</h2>
+      <p>The Mining Integration Summit 2026 brings together mining houses, governments, investors, and communities for two days of dialogue, partnership, and shared prosperity. Delegate seats are strictly limited.</p>
+      <div class="emodal-actions">
+        <a href="https://mining-summit-form.vercel.app/" target="_blank" class="btn bg">Register Now</a>
+        <button class="btn bow" id="emodal-dismiss" style="background:var(--coal);border-color:var(--coal)">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
-  <div class="fb"><p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa&rsquo;s mining and resource sectors.</p><div class="fe"><a href="/cdn-cgi/l/email-protection#4726232a2e290734262a2426692428693d26"><span class="__cf_email__" data-cfemail="b1d0d5dcd8dff1c2d0dcd2d09fd2de9fcbd0">[email&#160;protected]</span></a></div></div>
+  <div class="fb"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Official-SAMCA-logo.png" alt="SAMCA" style="height:52px;width:auto;object-fit:contain;margin-bottom:20px"><p>SAMCA connects mining houses, communities, governments, and investors to drive sustainable growth, social license, and shared prosperity across Africa&rsquo;s mining and resource sectors.</p><div class="fe"><a href="mailto:info@samca.co.za">info@samca.co.za</a></div></div>
   <div class="fc2"><h4>Navigation</h4><ul>
     <li><a data-page="home">Home</a></li>
     <li><a data-page="who">Who We Are</a></li>
@@ -769,7 +846,7 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
     <li><a data-page="newsletter">Newsletter</a></li>
     <li><a data-page="sponsors">Sponsors</a></li>
   </ul></div>
-  <div class="fc2"><h4>Contact</h4><ul><li><a href="/cdn-cgi/l/email-protection#1a7b7e7773745a697b77797b34797534607b"><span class="__cf_email__" data-cfemail="7e1f1a1317103e0d1f131d1f501d1150041f">[email&#160;protected]</span></a></li><li><a href="/cdn-cgi/l/email-protection#a2d0c7c5cbd1d6d0c3d6cbcdccd1e2d1c3cfc1c38cc1cd8cd8c3"><span class="__cf_email__" data-cfemail="9eecfbf9f7edeaecffeaf7f1f0eddeedfff3fdffb0fdf1b0e4ff">[email&#160;protected]</span></a></li></ul>
+  <div class="fc2"><h4>Contact</h4><ul><li><a href="mailto:info@samca.co.za">info@samca.co.za</a></li><li><a href="mailto:partnerships@samca.co.za">partnerships@samca.co.za</a></li></ul>
   <h4 style="margin-top:24px">Addresses</h4><ul><li><a>55 Ocean View Sea Point, Cape Town, 8001</a></li><li><a>Al Mamourah Street, Al Nakheel, Ras Al-Khaimah, UAE</a></li></ul></div>
 </footer>
 <div class="fbot"><p>&copy; 2026 SAMCA. All rights reserved.</p><span class="bhc">Built by Business Hustle</span></div>
@@ -888,6 +965,39 @@ footer{background:var(--coal);border-top:1px solid rgba(200,136,14,.2);padding:6
     });
 
     go('home');
+
+    // Event invite modal — show after 5s on home/who/event, once per session
+    (function(){
+      var MODAL_PAGES = ['home','who','event'];
+      var shown = false;
+      var timer = null;
+      var modal = document.getElementById('emodal');
+      function showModal(){
+        if(shown) return;
+        shown = true;
+        modal.classList.add('open');
+        document.body.style.overflow='hidden';
+      }
+      function closeModal(){
+        modal.classList.remove('open');
+        document.body.style.overflow='';
+        sessionStorage.setItem('mis_modal_shown','1');
+      }
+      document.getElementById('emodal-bg').addEventListener('click',closeModal);
+      document.getElementById('emodal-close').addEventListener('click',closeModal);
+      document.getElementById('emodal-dismiss').addEventListener('click',closeModal);
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+      // Hook into go() to schedule modal
+      var _go = window.go;
+      window.go = function(page){
+        _go(page);
+        clearTimeout(timer);
+        if(MODAL_PAGES.indexOf(page)>-1 && !sessionStorage.getItem('mis_modal_shown')){
+          timer = setTimeout(showModal, 5000);
+        }
+      };
+    })();
+
   });
 })();
 </script>
