@@ -92,18 +92,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bott
 .ncb{padding:24px}.ncb h3{font-family:var(--sf);font-size:20px;font-weight:600;color:var(--coal);line-height:1.3;margin:8px 0 10px}
 .ncb p{font-size:13.5px;color:var(--gr);line-height:1.65}
 
-.parts{background:var(--li);border-top:3px solid var(--gold);padding:56px 60px}
-.plbl{font-family:var(--sf);font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--coal);text-align:center;display:block;margin-bottom:8px;letter-spacing:-.01em}
+.parts{background:var(--ch);border-top:3px solid var(--gold);padding:56px 60px}
+.plbl{font-family:var(--sf);font-size:clamp(22px,3vw,34px);font-weight:600;color:var(--li);text-align:center;display:block;margin-bottom:8px;letter-spacing:-.01em}
 .plbl-sub{font-family:var(--sc);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;text-align:center;margin-bottom:44px}
-.plogos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:1200px;margin:0 auto}
-.plogo-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 28px;border:1px solid var(--ld);background:#fff;transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit}
-.plogo-item:hover{box-shadow:0 10px 36px rgba(159,145,98,.18);transform:translateY(-4px);border-color:rgba(159,145,98,.4)}
-.plogo-item img{height:160px;width:auto;max-width:220px;object-fit:contain}
+.plogos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px 48px;max-width:1200px;margin:0 auto}
+
+.plogo-item:hover{opacity:.75;transform:translateY(-3px)}
+.plogo-item img{height:200px;width:auto;max-width:260px;object-fit:contain;filter:brightness(1.05)}
 .plogo-item strong{font-family:var(--sf);font-size:16px;font-weight:600;color:var(--coal);text-align:center;line-height:1.3;margin-top:4px}
 @media(max-width:900px){.parts{padding:36px 20px}.plogos{grid-template-columns:repeat(2,1fr);gap:12px}}
 @media(max-width:480px){.plogos{grid-template-columns:1fr 1fr;gap:10px}}
+.plogo-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px 16px;border:none;background:transparent;transition:opacity .25s,transform .25s;text-decoration:none;color:inherit}
 @media(max-width:900px){.plogo-item{padding:20px 16px;gap:12px}}
-@media(max-width:900px){.plogo-item img{height:70px;max-width:120px}}
+@media(max-width:900px){.plogo-item img{height:90px;max-width:140px}}
 @media(max-width:900px){.plogo-item strong{font-size:12px}}
 @media(max-width:900px){.plbl{font-size:22px}.plbl-sub{margin-bottom:24px;font-size:10px}}
 
@@ -200,7 +201,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:#fff;border-bott
 .dl h2{font-family:var(--sf);font-size:clamp(26px,3.5vw,46px);font-weight:600;color:#fff;line-height:1.18}
 .vidsec{background:var(--coal);padding:80px 60px;text-align:center}
 .vidsec h2{font-family:var(--sf);font-size:clamp(28px,4vw,52px);font-weight:600;color:#fff;line-height:1.15;margin:10px 0 40px}
-.vw{max-width:920px;margin:0 auto;position:relative;padding-bottom:50%;background:#000;overflow:hidden}
+.vw{max-width:500px;margin:0 auto;position:relative;padding-bottom:177.78%;background:#000;overflow:hidden;max-height:90vh}
 .vw video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 .ri{padding:72px 60px;background:#fff;text-align:center;border-bottom:1px solid var(--ld)}
@@ -303,7 +304,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
   .evimg{min-height:260px;position:relative;height:260px}
   .sp{border-right:none}.fw{padding:52px 24px}
   .dl{padding:40px 24px;flex-direction:column;text-align:center}
-  .vidsec{padding:52px 24px}.vw{padding-bottom:56.25%}
+  .vidsec{padding:52px 24px}.vw{padding-bottom:177.78%;max-width:320px}
   .ri{padding:56px 24px}.tg{grid-template-columns:1fr 1fr;padding:40px 24px;gap:16px}
   .ropt{padding:48px 24px;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}.ropt:last-child{border-bottom:none}
   .rn{padding:28px 24px}.sim{height:280px;position:relative}.st2{padding:52px 24px}
@@ -483,8 +484,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"></a>
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"></a>
     <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
+        <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
   </div>
 </div>
 </div>
@@ -521,7 +521,6 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
 </section>
 
 <section id="who" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/10.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Our Story</span><h1>Who We Are</h1></div></div>
 <div style="position:relative;overflow:hidden;min-height:580px;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;inset:0;background:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/10.png') center/cover"></div>
   <div style="position:absolute;inset:0;background:rgba(18,18,18,.62)"></div>
@@ -609,15 +608,13 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"></a>
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"></a>
     <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
+        <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
   </div>
 </div>
 </div>
 </section>
 
 <section id="pillars" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/8.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Framework</span><h1>Our Summit Pillars</h1></div></div>
 <div class="watt"><span class="tag">Why Attend?</span><h2 class="st">Africa&rsquo;s most resource-rich sector, under-integrated in local participation.</h2><p class="sb">The Summit creates a platform where Policy Meets Implementation &rarr; Capital Meets Opportunity &rarr; Innovation Meets Industry Demand.</p></div>
 <div class="pgrid">
   <div class="pcard"><div class="pnum">01</div><h3>Pillar One</h3><h4>Identifying Needs, Gaps &amp; Opportunities</h4><p>A structured platform for mining houses to identify operational challenges and strategic opportunities.</p><ul class="pl"><li>Operational challenges affecting productivity and social licence</li><li>Supply chain gaps within the mining ecosystem</li><li>Strategies to improve ESG performance and community engagement</li></ul></div>
@@ -635,7 +632,6 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
 </section>
 
 <section id="event" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/6.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">2026 Annual Event</span><h1>Mining Integration Summit 2026</h1></div></div>
 <div style="background:var(--li);padding:72px 60px;max-width:100%;border-bottom:3px solid var(--gold)">
   <span class="tag">About the Summit</span>
   <h2 style="font-family:var(--sf);font-size:clamp(28px,3.5vw,48px);font-weight:600;color:var(--coal);line-height:1.15;margin:10px 0 18px;max-width:760px">The first platform of its kind dedicated to strengthening the relationship between mining and society.</h2>
@@ -657,7 +653,6 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
 </section>
 
 <section id="registration" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/5.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Register</span><h1>Summit Registration</h1></div></div>
 <div style="background:var(--li);padding:clamp(48px,6vw,72px) clamp(24px,6vw,60px)">
   <div style="text-align:center;margin-bottom:48px">
     <span class="tag">2026 Event Sponsors</span>
@@ -689,8 +684,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
 </section>
 
 <section id="sponsorship" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/7.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Partner With Us</span><h1>MIS Sponsorship</h1></div></div>
-<div class="vidsec"><span class="tag tl">Overview</span><h2>Become a Summit Sponsor</h2><div class="vw"><video controls preload="none" poster="https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png" playsinline><source src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/SAMCA-Video-MIS-Sponsorship-page.mp4" type="video/mp4"></video></div></div>
+
 <div style="background:#fff;padding:72px 60px">
   <span class="tag">Why Sponsor</span>
   <h2 style="font-family:var(--sf);font-size:clamp(28px,3.5vw,46px);font-weight:600;color:var(--coal);line-height:1.15;margin:10px 0 18px;max-width:760px">Position your brand at the forefront of Africa&rsquo;s mining evolution.</h2>
@@ -711,15 +705,13 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"></a>
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"></a>
     <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
+        <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
   </div>
 </div>
 </div>
 </section>
 
 <section id="exhibit" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Get Involved</span><h1>Exhibit &amp; Sponsor</h1></div></div>
 <div class="exh">
   <div class="exht"><span class="tag tl">Get Involved</span><h2>Breaking Ground Together</h2><p>Three ways to be at the centre of Africa&rsquo;s most important mining conversation in 2026. Choose your role and make your mark.</p></div>
   <div class="exhi"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/1.png" alt="" loading="lazy"></div>
@@ -739,15 +731,13 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"></a>
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"></a>
     <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
+        <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
   </div>
 </div>
 </div>
 </section>
 
 <section id="newsletter" style="display:none">
-<div class="ph"><div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/3.png')"></div><div class="pho"></div><div class="phc"><span class="tag tl">Stay Connected</span><h1>Subscribe to the SAMCA Newsletter</h1></div></div>
 <div class="nlsec" style="min-height:600px">
   <div class="nll" style="padding:80px 60px">
     <span class="tag tl">Why Subscribe?</span>
@@ -778,8 +768,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/15.png" alt="School is Cool Program" loading="lazy"></a>
     <a href="https://workavenue.org/Our-Work/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/16.png" alt="The Ward Foundation R&amp;D" loading="lazy"></a>
     <a href="https://www.flowsync-ai.com" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/17.png" alt="Flowsync" loading="lazy"></a>
-    <a href="https://mining-summit-form.vercel.app/" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/18.png" alt="The Mining Integration Summit" loading="lazy"></a>
-    <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
+        <a href="https://bojanala.gov.za" target="_blank" rel="noopener" class="plogo-item"><img src="https://app.businesshustle.co.za/wp-content/uploads/2026/04/Bojanala-logo-1.png" alt="Bojanala Local House" loading="lazy"></a>
   </div>
 </div>
 </div>
@@ -787,15 +776,6 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:64px 60px;displa
 
 
 <section id="sponsors" style="display:none">
-
-<div class="ph">
-  <div class="phb" style="background-image:url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/8.png')"></div>
-  <div class="pho"></div>
-  <div class="phc">
-    <span class="tag tl">2026</span>
-    <h1>Event Sponsors</h1>
-  </div>
-</div>
 
 <!-- Intro text -->
 <div style="background:#fff;padding:clamp(40px,6vw,72px) clamp(24px,6vw,60px)">
